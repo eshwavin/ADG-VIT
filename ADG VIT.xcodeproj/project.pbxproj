@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA11E37E9EC00456C00 /* AppDelegate.swift */; };
-		116C1CA41E37E9EC00456C00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA31E37E9EC00456C00 /* ViewController.swift */; };
+		116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA31E37E9EC00456C00 /* HomeViewController.swift */; };
 		116C1CA71E37E9EC00456C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116C1CA51E37E9EC00456C00 /* Main.storyboard */; };
 		116C1CA91E37E9EC00456C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116C1CA81E37E9EC00456C00 /* Assets.xcassets */; };
 		116C1CAC1E37E9EC00456C00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116C1CAA1E37E9EC00456C00 /* LaunchScreen.storyboard */; };
 		116C1CB71E37E9EC00456C00 /* ADG_VITTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CB61E37E9EC00456C00 /* ADG_VITTests.swift */; };
 		116C1CC21E37E9EC00456C00 /* ADG_VITUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CC11E37E9EC00456C00 /* ADG_VITUITests.swift */; };
 		116C1CD21E37EF8B00456C00 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */; };
+		116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CD41E37F63800456C00 /* MenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		116C1C9E1E37E9EC00456C00 /* ADG VIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADG VIT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		116C1CA11E37E9EC00456C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		116C1CA31E37E9EC00456C00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		116C1CA31E37E9EC00456C00 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		116C1CA61E37E9EC00456C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		116C1CA81E37E9EC00456C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		116C1CAB1E37E9EC00456C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		116C1CCF1E37EF8A00456C00 /* ADG VIT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADG VIT-Bridging-Header.h"; sourceTree = "<group>"; };
 		116C1CD01E37EF8B00456C00 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		116C1CD41E37F63800456C00 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				116C1CA11E37E9EC00456C00 /* AppDelegate.swift */,
-				116C1CA31E37E9EC00456C00 /* ViewController.swift */,
+				116C1CA31E37E9EC00456C00 /* HomeViewController.swift */,
 				116C1CD31E37EF9300456C00 /* SWRevealView */,
 				116C1CA51E37E9EC00456C00 /* Main.storyboard */,
 				116C1CA81E37E9EC00456C00 /* Assets.xcassets */,
@@ -133,6 +135,7 @@
 		116C1CD31E37EF9300456C00 /* SWRevealView */ = {
 			isa = PBXGroup;
 			children = (
+				116C1CD41E37F63800456C00 /* MenuTableViewController.swift */,
 				116C1CD01E37EF8B00456C00 /* SWRevealViewController.h */,
 				116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */,
 				116C1CCF1E37EF8A00456C00 /* ADG VIT-Bridging-Header.h */,
@@ -278,7 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				116C1CA41E37E9EC00456C00 /* ViewController.swift in Sources */,
+				116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */,
+				116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */,
 				116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */,
 				116C1CD21E37EF8B00456C00 /* SWRevealViewController.m in Sources */,
 			);
