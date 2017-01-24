@@ -14,6 +14,7 @@
 		116C1CAC1E37E9EC00456C00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116C1CAA1E37E9EC00456C00 /* LaunchScreen.storyboard */; };
 		116C1CB71E37E9EC00456C00 /* ADG_VITTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CB61E37E9EC00456C00 /* ADG_VITTests.swift */; };
 		116C1CC21E37E9EC00456C00 /* ADG_VITUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CC11E37E9EC00456C00 /* ADG_VITUITests.swift */; };
+		116C1CD21E37EF8B00456C00 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		116C1CBD1E37E9EC00456C00 /* ADG VITUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ADG VITUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		116C1CC11E37E9EC00456C00 /* ADG_VITUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADG_VITUITests.swift; sourceTree = "<group>"; };
 		116C1CC31E37E9EC00456C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		116C1CCF1E37EF8A00456C00 /* ADG VIT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADG VIT-Bridging-Header.h"; sourceTree = "<group>"; };
+		116C1CD01E37EF8B00456C00 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			children = (
 				116C1CA11E37E9EC00456C00 /* AppDelegate.swift */,
 				116C1CA31E37E9EC00456C00 /* ViewController.swift */,
+				116C1CD31E37EF9300456C00 /* SWRevealView */,
 				116C1CA51E37E9EC00456C00 /* Main.storyboard */,
 				116C1CA81E37E9EC00456C00 /* Assets.xcassets */,
 				116C1CAA1E37E9EC00456C00 /* LaunchScreen.storyboard */,
@@ -123,6 +128,16 @@
 				116C1CC31E37E9EC00456C00 /* Info.plist */,
 			);
 			path = "ADG VITUITests";
+			sourceTree = "<group>";
+		};
+		116C1CD31E37EF9300456C00 /* SWRevealView */ = {
+			isa = PBXGroup;
+			children = (
+				116C1CD01E37EF8B00456C00 /* SWRevealViewController.h */,
+				116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */,
+				116C1CCF1E37EF8A00456C00 /* ADG VIT-Bridging-Header.h */,
+			);
+			name = SWRevealView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +209,7 @@
 					116C1C9D1E37E9EB00456C00 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = S2LV3T7DFP;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					116C1CB11E37E9EC00456C00 = {
@@ -264,6 +280,7 @@
 			files = (
 				116C1CA41E37E9EC00456C00 /* ViewController.swift in Sources */,
 				116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */,
+				116C1CD21E37EF8B00456C00 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,11 +432,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = S2LV3T7DFP;
 				INFOPLIST_FILE = "ADG VIT/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinnu.ADG-VIT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ADG VIT/ADG VIT-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -428,11 +448,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = S2LV3T7DFP;
 				INFOPLIST_FILE = "ADG VIT/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinnu.ADG-VIT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ADG VIT/ADG VIT-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
