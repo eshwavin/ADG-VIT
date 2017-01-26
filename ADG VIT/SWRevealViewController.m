@@ -1196,6 +1196,7 @@ const int FrontViewPositionNone = 0xff;
 
 - (void)_handleRevealGesture:(UIPanGestureRecognizer *)recognizer
 {
+    
     switch ( recognizer.state )
     {
         case UIGestureRecognizerStateBegan:

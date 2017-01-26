@@ -15,13 +15,24 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // reveal view controller
+        
         if revealViewController() != nil {
             self.menuButton.target = revealViewController()
             self.menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController().rightViewRevealWidth = 150
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        // navigation controller
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.title = "Home"
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

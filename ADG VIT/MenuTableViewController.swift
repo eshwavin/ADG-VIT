@@ -10,10 +10,19 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
+    @IBOutlet var menuImageViews: [UIImageView]!
+    
+    var selectedPage: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "MenuBackground"))
+        
+        let imageView = UIImageView(image: UIImage(named: "Side menu bg"))
+        imageView.contentMode = .scaleAspectFill
+        
+        self.tableView.backgroundView = imageView
+        
+        self.menuImageViews[self.selectedPage].image = UIImage(named: "Double Circle")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,7 +45,13 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 7
+        return 8
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.menuImageViews[self.selectedPage].image = UIImage(named: "Circle")
+        self.selectedPage = indexPath.row - 1
+        self.menuImageViews[self.selectedPage].image = UIImage(named: "Double Circle")
     }
 
     /*
