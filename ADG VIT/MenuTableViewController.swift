@@ -29,6 +29,7 @@ class MenuTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +37,17 @@ class MenuTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let controller = self.revealViewController().frontViewController as? HomeViewController {
+            
+            if controller.timer != nil {
+                controller.timer.invalidate()
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,6 +61,11 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 {
+            return
+        }
+        
         self.menuImageViews[self.selectedPage].image = UIImage(named: "Circle")
         self.selectedPage = indexPath.row - 1
         self.menuImageViews[self.selectedPage].image = UIImage(named: "Double Circle")

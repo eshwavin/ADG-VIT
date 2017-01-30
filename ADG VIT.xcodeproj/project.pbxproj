@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7EF0FF81E8BB9A5B2FC439 /* Pods_ADG_VITTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B57F9C6CF6272164996C193 /* Pods_ADG_VITTests.framework */; };
+		1119B6811E3F5BE200CF009A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119B6801E3F5BE200CF009A /* Reachability.m */; };
 		116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA11E37E9EC00456C00 /* AppDelegate.swift */; };
 		116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA31E37E9EC00456C00 /* HomeViewController.swift */; };
 		116C1CA71E37E9EC00456C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116C1CA51E37E9EC00456C00 /* Main.storyboard */; };
@@ -16,6 +18,18 @@
 		116C1CC21E37E9EC00456C00 /* ADG_VITUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CC11E37E9EC00456C00 /* ADG_VITUITests.swift */; };
 		116C1CD21E37EF8B00456C00 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */; };
 		116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CD41E37F63800456C00 /* MenuTableViewController.swift */; };
+		119FD4EE1E3DDCC00021AE26 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4ED1E3DDCC00021AE26 /* NewsCollectionViewCell.swift */; };
+		119FD4F01E3DDFAA0021AE26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4EF1E3DDFAA0021AE26 /* Constants.swift */; };
+		119FD4F21E3E18710021AE26 /* HomeTableViewDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4F11E3E18710021AE26 /* HomeTableViewDataDelegate.swift */; };
+		119FD4F41E3E19BC0021AE26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */; };
+		119FD4F51E3E19BC0021AE26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */; };
+		119FD4F61E3E19BC0021AE26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */; };
+		119FD4F81E3E43090021AE26 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4F71E3E43090021AE26 /* DataManager.swift */; };
+		119FD4FC1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */; };
+		119FD4FD1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */; };
+		119FD4FE1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */; };
+		1E6EA025E0BD6625E4D80123 /* Pods_ADG_VIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116DDC06E6B2ED1658FAC02A /* Pods_ADG_VIT.framework */; };
+		81F52E8D1FA91B517A87DC94 /* Pods_ADG_VITUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F660F61601B231081A0B8 /* Pods_ADG_VITUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00CF3A63B82C7D995C4493D1 /* Pods-ADG VITTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VITTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VITTests/Pods-ADG VITTests.release.xcconfig"; sourceTree = "<group>"; };
+		078F660F61601B231081A0B8 /* Pods_ADG_VITUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADG_VITUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1119B67F1E3F5BE200CF009A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1119B6801E3F5BE200CF009A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		116C1C9E1E37E9EC00456C00 /* ADG VIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADG VIT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		116C1CA11E37E9EC00456C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116C1CA31E37E9EC00456C00 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +71,19 @@
 		116C1CD01E37EF8B00456C00 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		116C1CD41E37F63800456C00 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		116DDC06E6B2ED1658FAC02A /* Pods_ADG_VIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADG_VIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		119FD4ED1E3DDCC00021AE26 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		119FD4EF1E3DDFAA0021AE26 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		119FD4F11E3E18710021AE26 /* HomeTableViewDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewDataDelegate.swift; sourceTree = "<group>"; };
+		119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		119FD4F71E3E43090021AE26 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		19F700DE4B8E0646B3CF75FC /* Pods-ADG VITUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VITUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VITUITests/Pods-ADG VITUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2B57F9C6CF6272164996C193 /* Pods_ADG_VITTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADG_VITTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		589A9B71F65ED3689381AE57 /* Pods-ADG VITUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VITUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VITUITests/Pods-ADG VITUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B5594CEE77DB4A790285984 /* Pods-ADG VIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VIT/Pods-ADG VIT.debug.xcconfig"; sourceTree = "<group>"; };
+		72A632D75E278F4C8C58D2DC /* Pods-ADG VIT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VIT.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VIT/Pods-ADG VIT.release.xcconfig"; sourceTree = "<group>"; };
+		C1526D3FB2E70A59FD63D9F6 /* Pods-ADG VITTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VITTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VITTests/Pods-ADG VITTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E6EA025E0BD6625E4D80123 /* Pods_ADG_VIT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7EF0FF81E8BB9A5B2FC439 /* Pods_ADG_VITTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +107,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F52E8D1FA91B517A87DC94 /* Pods_ADG_VITUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1119B6821E3F5C0D00CF009A /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				1119B67F1E3F5BE200CF009A /* Reachability.h */,
+				1119B6801E3F5BE200CF009A /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		1119B6831E3F5C1700CF009A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				119FD4EF1E3DDFAA0021AE26 /* Constants.swift */,
+				119FD4F71E3E43090021AE26 /* DataManager.swift */,
+				116C1CCF1E37EF8A00456C00 /* ADG VIT-Bridging-Header.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		1119B6841E3F5C2000CF009A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				116C1CA51E37E9EC00456C00 /* Main.storyboard */,
+				116C1CAA1E37E9EC00456C00 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		1119B6851E3F5C2900CF009A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1119B6831E3F5C1700CF009A /* Utils */,
+				116C1CA81E37E9EC00456C00 /* Assets.xcassets */,
+				116C1CAD1E37E9EC00456C00 /* Info.plist */,
+				119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		116C1C951E37E9EB00456C00 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +160,8 @@
 				116C1CB51E37E9EC00456C00 /* ADG VITTests */,
 				116C1CC01E37E9EC00456C00 /* ADG VITUITests */,
 				116C1C9F1E37E9EC00456C00 /* Products */,
+				3202B8C6E463AE474064D478 /* Pods */,
+				83F55B6CAF9F0754DFE3DBD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,12 +179,11 @@
 			isa = PBXGroup;
 			children = (
 				116C1CA11E37E9EC00456C00 /* AppDelegate.swift */,
-				116C1CA31E37E9EC00456C00 /* HomeViewController.swift */,
+				119FD4FF1E3E461D0021AE26 /* Home */,
 				116C1CD31E37EF9300456C00 /* SWRevealView */,
-				116C1CA51E37E9EC00456C00 /* Main.storyboard */,
-				116C1CA81E37E9EC00456C00 /* Assets.xcassets */,
-				116C1CAA1E37E9EC00456C00 /* LaunchScreen.storyboard */,
-				116C1CAD1E37E9EC00456C00 /* Info.plist */,
+				1119B6821E3F5C0D00CF009A /* Reachability */,
+				1119B6841E3F5C2000CF009A /* Storyboards */,
+				1119B6851E3F5C2900CF009A /* Resources */,
 			);
 			path = "ADG VIT";
 			sourceTree = "<group>";
@@ -138,9 +212,66 @@
 				116C1CD41E37F63800456C00 /* MenuTableViewController.swift */,
 				116C1CD01E37EF8B00456C00 /* SWRevealViewController.h */,
 				116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */,
-				116C1CCF1E37EF8A00456C00 /* ADG VIT-Bridging-Header.h */,
 			);
 			name = SWRevealView;
+			sourceTree = "<group>";
+		};
+		119FD4FF1E3E461D0021AE26 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				119FD5021E3E46460021AE26 /* Model */,
+				119FD5001E3E46370021AE26 /* VIew */,
+				119FD5011E3E463E0021AE26 /* Controller */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		119FD5001E3E46370021AE26 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */,
+				119FD4ED1E3DDCC00021AE26 /* NewsCollectionViewCell.swift */,
+			);
+			name = VIew;
+			sourceTree = "<group>";
+		};
+		119FD5011E3E463E0021AE26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				116C1CA31E37E9EC00456C00 /* HomeViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		119FD5021E3E46460021AE26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				119FD4F11E3E18710021AE26 /* HomeTableViewDataDelegate.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3202B8C6E463AE474064D478 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B5594CEE77DB4A790285984 /* Pods-ADG VIT.debug.xcconfig */,
+				72A632D75E278F4C8C58D2DC /* Pods-ADG VIT.release.xcconfig */,
+				C1526D3FB2E70A59FD63D9F6 /* Pods-ADG VITTests.debug.xcconfig */,
+				00CF3A63B82C7D995C4493D1 /* Pods-ADG VITTests.release.xcconfig */,
+				589A9B71F65ED3689381AE57 /* Pods-ADG VITUITests.debug.xcconfig */,
+				19F700DE4B8E0646B3CF75FC /* Pods-ADG VITUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		83F55B6CAF9F0754DFE3DBD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				116DDC06E6B2ED1658FAC02A /* Pods_ADG_VIT.framework */,
+				2B57F9C6CF6272164996C193 /* Pods_ADG_VITTests.framework */,
+				078F660F61601B231081A0B8 /* Pods_ADG_VITUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 116C1CC61E37E9EC00456C00 /* Build configuration list for PBXNativeTarget "ADG VIT" */;
 			buildPhases = (
+				BB18A18402C73F90F13043DC /* [CP] Check Pods Manifest.lock */,
 				116C1C9A1E37E9EB00456C00 /* Sources */,
 				116C1C9B1E37E9EB00456C00 /* Frameworks */,
 				116C1C9C1E37E9EB00456C00 /* Resources */,
+				87394FF8D5413C38E11AA086 /* [CP] Embed Pods Frameworks */,
+				ADB53DB602BB2C115D937BA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 116C1CC91E37E9EC00456C00 /* Build configuration list for PBXNativeTarget "ADG VITTests" */;
 			buildPhases = (
+				6919FF132D33A9A2334C1994 /* [CP] Check Pods Manifest.lock */,
 				116C1CAE1E37E9EC00456C00 /* Sources */,
 				116C1CAF1E37E9EC00456C00 /* Frameworks */,
 				116C1CB01E37E9EC00456C00 /* Resources */,
+				A9C704DFC4DF58031DBFC9AB /* [CP] Embed Pods Frameworks */,
+				CD93D216CE1720B263F48E04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,9 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 116C1CCC1E37E9EC00456C00 /* Build configuration list for PBXNativeTarget "ADG VITUITests" */;
 			buildPhases = (
+				7B4D81022C963AA7BB51FB40 /* [CP] Check Pods Manifest.lock */,
 				116C1CB91E37E9EC00456C00 /* Sources */,
 				116C1CBA1E37E9EC00456C00 /* Frameworks */,
 				116C1CBB1E37E9EC00456C00 /* Resources */,
+				B5E3E0A78469B3E1D09808B7 /* [CP] Embed Pods Frameworks */,
+				BAA102BDF561DFDF295F51E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				116C1CAC1E37E9EC00456C00 /* LaunchScreen.storyboard in Resources */,
+				119FD4F41E3E19BC0021AE26 /* GoogleService-Info.plist in Resources */,
 				116C1CA91E37E9EC00456C00 /* Assets.xcassets in Resources */,
 				116C1CA71E37E9EC00456C00 /* Main.storyboard in Resources */,
 			);
@@ -264,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119FD4F51E3E19BC0021AE26 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +413,149 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119FD4F61E3E19BC0021AE26 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6919FF132D33A9A2334C1994 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7B4D81022C963AA7BB51FB40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		87394FF8D5413C38E11AA086 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ADG VIT/Pods-ADG VIT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9C704DFC4DF58031DBFC9AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ADG VITTests/Pods-ADG VITTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADB53DB602BB2C115D937BA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ADG VIT/Pods-ADG VIT-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5E3E0A78469B3E1D09808B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ADG VITUITests/Pods-ADG VITUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAA102BDF561DFDF295F51E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ADG VITUITests/Pods-ADG VITUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB18A18402C73F90F13043DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CD93D216CE1720B263F48E04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ADG VITTests/Pods-ADG VITTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		116C1C9A1E37E9EB00456C00 /* Sources */ = {
@@ -282,9 +563,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */,
+				119FD4F81E3E43090021AE26 /* DataManager.swift in Sources */,
 				116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */,
+				119FD4F21E3E18710021AE26 /* HomeTableViewDataDelegate.swift in Sources */,
+				1119B6811E3F5BE200CF009A /* Reachability.m in Sources */,
 				116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */,
 				116C1CD21E37EF8B00456C00 /* SWRevealViewController.m in Sources */,
+				119FD4FC1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */,
+				119FD4EE1E3DDCC00021AE26 /* NewsCollectionViewCell.swift in Sources */,
+				119FD4F01E3DDFAA0021AE26 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119FD4FD1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */,
 				116C1CB71E37E9EC00456C00 /* ADG_VITTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119FD4FE1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */,
 				116C1CC21E37E9EC00456C00 /* ADG_VITUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +723,7 @@
 		};
 		116C1CC71E37E9EC00456C00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B5594CEE77DB4A790285984 /* Pods-ADG VIT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -450,6 +740,7 @@
 		};
 		116C1CC81E37E9EC00456C00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A632D75E278F4C8C58D2DC /* Pods-ADG VIT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -465,6 +756,7 @@
 		};
 		116C1CCA1E37E9EC00456C00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1526D3FB2E70A59FD63D9F6 /* Pods-ADG VITTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -480,6 +772,7 @@
 		};
 		116C1CCB1E37E9EC00456C00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00CF3A63B82C7D995C4493D1 /* Pods-ADG VITTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -495,6 +788,7 @@
 		};
 		116C1CCD1E37E9EC00456C00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 589A9B71F65ED3689381AE57 /* Pods-ADG VITUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = S2LV3T7DFP;
@@ -509,6 +803,7 @@
 		};
 		116C1CCE1E37E9EC00456C00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19F700DE4B8E0646B3CF75FC /* Pods-ADG VITUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = S2LV3T7DFP;
@@ -540,6 +835,7 @@
 				116C1CC81E37E9EC00456C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		116C1CC91E37E9EC00456C00 /* Build configuration list for PBXNativeTarget "ADG VITTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +844,7 @@
 				116C1CCB1E37E9EC00456C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		116C1CCC1E37E9EC00456C00 /* Build configuration list for PBXNativeTarget "ADG VITUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +853,7 @@
 				116C1CCE1E37E9EC00456C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
