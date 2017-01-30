@@ -26,7 +26,7 @@ let NOACCESS = "No Internet Access"
 
 let WWAN = "Cellular Access Available"
 
-func showAlert(_ title: String, message: String) -> UIAlertController {
+func showAlert(_ title: String!, message: String!) -> UIAlertController {
     
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

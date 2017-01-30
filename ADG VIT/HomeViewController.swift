@@ -84,8 +84,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // getting news
         
-        DataManager().getNews(child: "VIT", completion: didLoadVITData)
-        DataManager().getNews(child: "ADG", completion: didLoadADGData)
+        DataManager().getNews(child: "VIT", completion: didLoadVITData) {
+            if reachabilityStatus != NOACCESS {
+                self.present(showAlert("Could not fetch VIT News!", message: "Try again later"), animated: true, completion: nil)
+            }
+        }
+        DataManager().getNews(child: "ADG", completion: didLoadADGData) {
+            if reachabilityStatus != NOACCESS {
+                self.present(showAlert("Could not fetch ADG News!", message: "Try again later"), animated: true, completion: nil)
+            }
+        }
         
         // location manager
         self.locationManager.delegate = self
@@ -145,7 +153,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewWillDisappear(animated)
         
         self.timer.invalidate()
-        print("Disappeared")
     }
     
     deinit {
@@ -334,7 +341,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let iconUrl = "http://openweathermap.org/img/w/\(result["icon"]!).png"
         
         let dataManager = DataManager()
-        dataManager.getVideoImage(iconUrl, imageView: self.weatherIconImageView)
+        dataManager.getVideoImage(iconUrl, imageView: self.weatherIconImageView) {
+            self.present(showAlert("Could not load weather image", message: nil), animated: true, completion: nil)
+        }
         
 //        dataManager.getVideoImageWithAlwaysTemplateRendering(iconUrl, imageView: self.weatherIconImageView)
         

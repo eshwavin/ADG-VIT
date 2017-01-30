@@ -13,7 +13,7 @@ class DataManager {
     
     let headlinesReference = FIRDatabase.database().reference().child("headlines")
     
-    func getNews(child: String, completion: @escaping (_ result: [String]) -> Void) {
+    func getNews(child: String, completion: @escaping (_ result: [String]) -> Void, inCaseOfError: @escaping () -> Void) {
         var data: [String] = []
         
         self.headlinesReference.child(child).observe(FIRDataEventType.value, with: { (snapshot) in
@@ -36,7 +36,11 @@ class DataManager {
                 
             }
         }) { (error) in
-            print(error.localizedDescription)
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+                DispatchQueue.main.async {
+                    inCaseOfError()
+                }
+            }
         }
         
     }
@@ -86,7 +90,11 @@ class DataManager {
                 }
                 
                 catch {
-                    print("Error in JSON Serialization")
+                    DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+                        DispatchQueue.main.async {
+                            inCaseOfError()
+                        }
+                    }
                 }
                 
             }
@@ -96,7 +104,7 @@ class DataManager {
         
     }
     
-    func getVideoImage(_ imageIconUrl: String, imageView: UIImageView) {
+    func getVideoImage(_ imageIconUrl: String, imageView: UIImageView, inCaseOfError: @escaping () -> Void) {
         
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             
@@ -107,7 +115,11 @@ class DataManager {
                 image = UIImage(data: data! as Data)
             }
             else {
-                print("Could not load image")
+                DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+                    DispatchQueue.main.async {
+                        inCaseOfError()
+                    }
+                }
             }
             
             DispatchQueue.main.async {
@@ -119,7 +131,7 @@ class DataManager {
         
     }
     
-    func getVideoImageWithAlwaysTemplateRendering(_ imageIconUrl: String, imageView: UIImageView) {
+    func getVideoImageWithAlwaysTemplateRendering(_ imageIconUrl: String, imageView: UIImageView, inCaseOfError: @escaping () -> Void) {
         
         DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
             
@@ -130,7 +142,11 @@ class DataManager {
                 image = UIImage(data: data! as Data)!.withRenderingMode(.alwaysTemplate)
             }
             else {
-                print("Could not load image")
+                DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+                    DispatchQueue.main.async {
+                        inCaseOfError()
+                    }
+                }
             }
             
             DispatchQueue.main.async {
