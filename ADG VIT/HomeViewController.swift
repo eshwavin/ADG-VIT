@@ -63,6 +63,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reachabilityChanged), name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
         
+        self.reachabilityChanged()
+        
+        
             // 2. reachability
         
         // reveal view controller
@@ -326,7 +329,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let dataManager = DataManager()
         dataManager.weatherAPI(url, completion: didLoadWeatherData) {
-            self.present(showAlert("Could not load the weather", message: "Try again later"), animated: true, completion: nil)
+            if reachabilityStatus != NOACCESS {
+                self.present(showAlert("Could not load the weather", message: "Try again later"), animated: true, completion: nil)
+            }
         }
         
     }
@@ -342,7 +347,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let dataManager = DataManager()
         dataManager.getVideoImage(iconUrl, imageView: self.weatherIconImageView) {
-            self.present(showAlert("Could not load weather image", message: nil), animated: true, completion: nil)
+            if reachabilityStatus != NOACCESS {
+                self.present(showAlert("Could not load weather image", message: nil), animated: true, completion: nil)
+            }
         }
         
 //        dataManager.getVideoImageWithAlwaysTemplateRendering(iconUrl, imageView: self.weatherIconImageView)
@@ -353,7 +360,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func manageLocation() {
         
-        if self.timer.isValid {
+        if self.timer != nil && self.timer.isValid {
             return
         }
         
