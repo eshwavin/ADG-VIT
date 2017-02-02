@@ -8,23 +8,23 @@
 
 import Foundation
 
+// MARK: - Color funnction to make it easy
+
 func color(red r: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
     return UIColor(red: r/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
 }
+
+// MARK: - Weather
 
 let newsInactiveColor = color(red: 110, green: 108, blue: 108, alpha: 1.0)
 
 let openWeatherAPIKey = "e343a75897575e20579e9b66cfafdcd5"
 
+// MARK: - General
+
 typealias JSONDictionary = [String : AnyObject]
 
 typealias JSONArray = Array<AnyObject>
-
-let WIFI = "WIFI Available"
-
-let NOACCESS = "No Internet Access"
-
-let WWAN = "Cellular Access Available"
 
 func showAlert(_ title: String!, message: String!) -> UIAlertController {
     
@@ -33,6 +33,29 @@ func showAlert(_ title: String!, message: String!) -> UIAlertController {
     return alertController
 }
 
+
+// MARK: - Reachability
+
+let WIFI = "WIFI Available"
+
+let NOACCESS = "No Internet Access"
+
+let WWAN = "Cellular Access Available"
+
 func noInternetAccessAlert() -> UIAlertController {
     return showAlert("No internet access!", message: "Please connect to the internet and try again")
 }
+
+// MARK: - SWRevealViewController
+
+let SWRevealWidth: CGFloat = 150.0
+
+// MARK: - Projects Colors
+
+//let projectColors: [UIColor] = [UIColor.blue, UIColor.red, UIColor.green, UIColor.yellow]
+
+let projectColors: [UIColor] = [color(red: 0, green: 118, blue: 255, alpha: 1.0), color(red: 37, green: 207, blue: 155, alpha: 1.0), color(red: 119, green: 60, blue: 170, alpha: 1.0)]
+
+let projectDetailsBackgroundColor = color(red: 12, green: 20, blue: 30, alpha: 1.0)
+
+

@@ -37,8 +37,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: Table View Variables
     
-    var VITNews: [String] = []
-    var ADGNews: [String] = []
     
     var VITTableView: UITableView!
     var ADGTableView: UITableView!
@@ -61,19 +59,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.manageLocation), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
+            // 2. reachability
+        
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.reachabilityChanged), name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
         
         self.reachabilityChanged()
-        
-        
-            // 2. reachability
         
         // reveal view controller
         
         if revealViewController() != nil {
             self.menuButton.target = revealViewController()
             self.menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rightViewRevealWidth = 150
+            revealViewController().rightViewRevealWidth = SWRevealWidth
             
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
@@ -183,9 +180,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.tableView.layoutMargins = UIEdgeInsets.zero
         cell.tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         
-        if cell.tableView.tag == 0 {
-            cell.tableView.tag = indexPath.item + 100
-        }
+        cell.tableView.tag = indexPath.item + 100
+        cell.tableView.reloadData()
         
         if indexPath.item == 0 {
             self.VITTableView = cell.tableView
@@ -202,8 +198,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if cell.tableView.delegate == nil {
             cell.tableView.delegate = self.tableViewDelegateDataSource
         }
-        
-//        cell.tableView.reloadData()
         
         return cell
     }
@@ -342,17 +336,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.weatherLabel.text = "\(result["temp"]!)°C\n" + ("\(result["description"]!)".capitalized)
         
         // get image
+
+        self.weatherIconImageView.image = UIImage(named: "\(result["icon"]!)")
         
-        let iconUrl = "http://openweathermap.org/img/w/\(result["icon"]!).png"
-        
-        let dataManager = DataManager()
-        dataManager.getVideoImage(iconUrl, imageView: self.weatherIconImageView) {
-            if reachabilityStatus != NOACCESS {
-                self.present(showAlert("Could not load weather image", message: nil), animated: true, completion: nil)
-            }
-        }
-        
-//        dataManager.getVideoImageWithAlwaysTemplateRendering(iconUrl, imageView: self.weatherIconImageView)
+//        let iconUrl = "http://openweathermap.org/img/w/\(result["icon"]!).png"
+//        
+//        let dataManager = DataManager()
+//        dataManager.getVideoImage(iconUrl, imageView: self.weatherIconImageView) {
+//            if reachabilityStatus != NOACCESS {
+//                self.present(showAlert("Could not load weather image", message: nil), animated: true, completion: nil)
+//            }
+//        }
         
     }
     
