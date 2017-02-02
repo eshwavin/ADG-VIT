@@ -1,38 +1,43 @@
 //
-//  ProjectsViewController.swift
+//  EventsViewController.swift
 //  ADG VIT
 //
-//  Created by Srivinayak Chaitanya Eshwa on 30/01/17.
+//  Created by Srivinayak Chaitanya Eshwa on 02/02/17.
 //  Copyright © 2017 Srivinayak Chaitanya Eshwa. All rights reserved.
 //
 
 import UIKit
 
-class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    // MARK: Menu Variables
+class EventsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    // MARK: Menu Variables
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     // MARK: Collection View Variables
     
-    @IBOutlet weak var ongoingProjectsButton: UIButton!
-    @IBOutlet weak var pastProjectsButton: UIButton!
+    @IBOutlet weak var upcomingEventsButton: UIButton!
+    @IBOutlet weak var pastEventsButton: UIButton!
+    
     @IBOutlet weak var collectionViewIndicatorLineView: UIView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var flag = true
     
-    // MARK: Projects Variables
+    // MARK: Events Variables
     
-    var ongoingCollectionView: UICollectionView!
-    var pastCollectionView: UICollectionView!
+    var upcomingEvents: [String: AnyObject] = [:]
+    var pastEvents: [String: AnyObject] = [:]
+    
+    var upcomingEventsCollectionView: UICollectionView!
+    var pastEventsCollectionView: UICollectionView!
     
     // MARK: CollectionViewDataSourceDelegate
     
-    let collectionViewDataSourceDelegate = ProjectsCollectionViewDataSourceDelegate()
+    let collectionViewDataSourceDelegate = EventsCollectionViewDataSourceDelegate()
     
-    var selectedProject: [String: String] = [:]
+    var selectedEvent: [String: AnyObject] = [:]
     
     // MARK: - View Cycle
     
@@ -60,27 +65,18 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        self.title = "Projects"
+        self.title = "Events"
         
-        self.getData()
-        
-        // set collectionviewdatasourcedelegate navigation function
-        
-        self.collectionViewDataSourceDelegate.navigationFunction = self.segue
         
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         if self.flag {
-            self.collectionViewIndicatorLineView.center.x = self.ongoingProjectsButton.center.x
+            self.collectionViewIndicatorLineView.center.x = self.upcomingEventsButton.center.x
         }
         
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
     }
     
     // MARK: - Collection View Data Source
@@ -94,15 +90,15 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "outerCollectionViewCell", for: indexPath) as! ProjectsOuterCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "outerCollectionViewCell", for: indexPath) as! EventsOuterCollectionViewCell
         
         cell.innerCollectionView.tag = indexPath.item + 100
         
         if indexPath.item == 0 {
-            self.ongoingCollectionView = cell.innerCollectionView
+            self.upcomingEventsCollectionView = cell.innerCollectionView
         }
         else {
-            self.pastCollectionView = cell.innerCollectionView
+            self.pastEventsCollectionView = cell.innerCollectionView
         }
         
         if cell.innerCollectionView.dataSource == nil {
@@ -140,7 +136,7 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
         return 0
     }
 
-    @IBAction func projectsButtonTapped(_ sender: UIButton) {
+    @IBAction func eventsButtonTapped(_ sender: UIButton) {
         
         if self.flag {
             self.flag = false
@@ -165,8 +161,8 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let offset = scrollView.contentOffset.x
         
-        let ongoingCenter = self.ongoingProjectsButton.center.x
-        let pastCenter = self.pastProjectsButton.center.x
+        let ongoingCenter = self.upcomingEventsButton.center.x
+        let pastCenter = self.pastEventsButton.center.x
         
         let lineViewRange = pastCenter - ongoingCenter
         
@@ -177,12 +173,12 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
         self.collectionViewIndicatorLineView.center.x = calculatedCenter
         
         if abs(calculatedCenter - ongoingCenter) < abs(calculatedCenter - pastCenter) {
-            self.ongoingProjectsButton.setTitleColor(UIColor.white, for: .normal)
-            self.pastProjectsButton.setTitleColor(newsInactiveColor, for: .normal)
+            self.upcomingEventsButton.setTitleColor(UIColor.white, for: .normal)
+            self.pastEventsButton.setTitleColor(newsInactiveColor, for: .normal)
         }
         else {
-            self.pastProjectsButton.setTitleColor(UIColor.white, for: .normal)
-            self.ongoingProjectsButton.setTitleColor(newsInactiveColor, for: .normal)
+            self.pastEventsButton.setTitleColor(UIColor.white, for: .normal)
+            self.upcomingEventsButton.setTitleColor(newsInactiveColor, for: .normal)
         }
         
     }
@@ -194,83 +190,51 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
         if reachabilityStatus == NOACCESS {
             self.present(noInternetAccessAlert(), animated: true, completion: nil)
         }
+        // else load data
     }
+
+    // MARK: - Events
     
-    
-    // MARK: - Projects
-    
-    func didLoadOngoingData(result: [[String: String]]) {
-        
-        self.collectionViewDataSourceDelegate.ongoingProjects = result
-        
-        if self.ongoingCollectionView != nil {
-            self.ongoingCollectionView.reloadData()
-        }
-        else {
-            self.collectionView.reloadData()
-        }
+    func didLoadUpcomingData(result: [[String: AnyObject]]) {
         
     }
     
-    func didLoadPastData(result: [[String: String]]) {
+    func didLoadPastData(result: [[String: AnyObject]]) {
         
-        self.collectionViewDataSourceDelegate.pastProjects = result
-        
-        if self.pastCollectionView != nil {
-            self.pastCollectionView.reloadData()
-        }
-        else {
-            self.collectionView.reloadData()
-        }
     }
-    
     
     // MARK: - APIs
     
     func getData() {
         // get projects data
         
-        if self.collectionViewDataSourceDelegate.ongoingProjects.count != 0 {
-            DataManager().getProjects(child: "ongoing", completion: didLoadOngoingData) {
+        if self.collectionViewDataSourceDelegate.upcomingEvents.count != 0 {
+            DataManager().getEvents(child: "ongoing", completion: didLoadUpcomingData) {
                 if reachabilityStatus != NOACCESS {
                     self.present(showAlert("Could not fetch Ongoing Projects!", message: "Try again later"), animated: true, completion: nil)
                 }
             }
         }
         
-        if self.collectionViewDataSourceDelegate.pastProjects.count != 0 {
-            DataManager().getProjects(child: "past", completion: didLoadPastData) {
+        if self.collectionViewDataSourceDelegate.pastEvents.count != 0 {
+            DataManager().getEvents(child: "past", completion: didLoadPastData) {
                 if reachabilityStatus != NOACCESS {
                     self.present(showAlert("Could not fetch Past Projects!", message: "Try again later"), animated: true, completion: nil)
                 }
             }
-        }        
-        
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-    func segue(item: [String: String]) {
-        self.selectedProject = item
-        self.performSegue(withIdentifier: "showProjects", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "showProjects" {
-            // send the selected project to the destination
-            let destinationViewController = segue.destination as! ProjectDetailsViewController
-            destinationViewController.project = self.selectedProject
-            
         }
         
     }
+
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
 
 }

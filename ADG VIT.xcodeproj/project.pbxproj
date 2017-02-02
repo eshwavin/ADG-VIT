@@ -36,6 +36,10 @@
 		11F810B41E4295AC008B83B2 /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810B31E4295AC008B83B2 /* ProjectDetailsViewController.swift */; };
 		11F810B61E429E30008B83B2 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810B51E429E30008B83B2 /* TriangleView.swift */; };
 		11F810B91E42AD97008B83B2 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F810B81E42AD97008B83B2 /* UIImageViewAligned.m */; };
+		11F810BD1E43413D008B83B2 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810BC1E43413D008B83B2 /* EventsViewController.swift */; };
+		11F810BF1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810BE1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift */; };
+		11F810C11E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810C01E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift */; };
+		11F810C31E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810C21E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift */; };
 		1E6EA025E0BD6625E4D80123 /* Pods_ADG_VIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116DDC06E6B2ED1658FAC02A /* Pods_ADG_VIT.framework */; };
 		81F52E8D1FA91B517A87DC94 /* Pods_ADG_VITUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F660F61601B231081A0B8 /* Pods_ADG_VITUITests.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +99,10 @@
 		11F810B51E429E30008B83B2 /* TriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		11F810B71E42AD96008B83B2 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
 		11F810B81E42AD97008B83B2 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
+		11F810BC1E43413D008B83B2 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		11F810BE1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewDataSourceDelegate.swift; sourceTree = "<group>"; };
+		11F810C01E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsOuterCollectionViewCell.swift; sourceTree = "<group>"; };
+		11F810C21E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsInnerCollectionViewCell.swift; sourceTree = "<group>"; };
 		19F700DE4B8E0646B3CF75FC /* Pods-ADG VITUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VITUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VITUITests/Pods-ADG VITUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B57F9C6CF6272164996C193 /* Pods_ADG_VITTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADG_VITTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		589A9B71F65ED3689381AE57 /* Pods-ADG VITUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VITUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VITUITests/Pods-ADG VITUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +206,10 @@
 			children = (
 				116C1CA11E37E9EC00456C00 /* AppDelegate.swift */,
 				116C1CD41E37F63800456C00 /* MenuTableViewController.swift */,
+				11F810BC1E43413D008B83B2 /* EventsViewController.swift */,
+				11F810BE1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift */,
+				11F810C01E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift */,
+				11F810C21E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift */,
 				11F810AD1E429518008B83B2 /* Projects */,
 				119FD4FF1E3E461D0021AE26 /* Home */,
 				11F810BB1E42AFE3008B83B2 /* Obj-C Libraries */,
@@ -653,6 +665,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F810BF1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift in Sources */,
+				11F810C11E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift in Sources */,
 				116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */,
 				119FD4F81E3E43090021AE26 /* DataManager.swift in Sources */,
 				11120BC21E3FACC400F990F8 /* ProjectsViewController.swift in Sources */,
@@ -670,6 +684,8 @@
 				11E995E61E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift in Sources */,
 				11F810B61E429E30008B83B2 /* TriangleView.swift in Sources */,
 				119FD4F01E3DDFAA0021AE26 /* Constants.swift in Sources */,
+				11F810C31E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift in Sources */,
+				11F810BD1E43413D008B83B2 /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

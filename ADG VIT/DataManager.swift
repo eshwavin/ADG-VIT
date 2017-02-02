@@ -231,7 +231,71 @@ class DataManager {
         
     }
     
+    // MARK: Events
+
+    func getEvents(child: String, completion: @escaping (_ result: [[String: AnyObject]]) -> Void, inCaseOfError: @escaping () -> Void) {
+        
+        
+        let projectsReference = FIRDatabase.database().reference().child("events")
+        
+        projectsReference.child(child).observe(FIRDataEventType.value, with: { (snapshot) in
+            
+            if !(snapshot.value is NSNull) {
+                
+                let dictionary = snapshot.value! as! [String: JSONDictionary]
+                
+                var data: [[String: AnyObject]] = []
+                
+                for dict in dictionary {
+                    data.append(dict.value)
+                }
+                
+                
+                DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+                    DispatchQueue.main.async {
+                        completion(data)
+                    }
+                }
+                
+                
+                
+            }
+            
+        }) { (error) in
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+                DispatchQueue.main.async {
+                    inCaseOfError()
+                }
+            }
+        }
+        
+    }
     
+    func getEventssImage(url: String, completion: @escaping (_ image: UIImage) -> Void) {
+        
+        let firebaseStorageReference = FIRStorage.storage().reference(forURL: "gs://adg-vit-83017.appspot.com")
+        
+        firebaseStorageReference.child("events").child(url).data(withMaxSize: 1024 * 1024) { (data, error) in
+            if error == nil {
+                let image = UIImage(data: data!)!
+                DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                }
+            }
+            else {
+                
+                DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+                    DispatchQueue.main.async {
+                        completion(UIImage(named: "General")!)
+                    }
+                }
+            }
+        }
+        
+        
+    }
 
     
 }

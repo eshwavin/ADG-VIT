@@ -1,19 +1,19 @@
 //
-//  ProjectsCollectionViewDataSourceDelegate.swift
+//  EventsCollectionViewDataSourceDelegate.swift
 //  ADG VIT
 //
-//  Created by Srivinayak Chaitanya Eshwa on 01/02/17.
+//  Created by Srivinayak Chaitanya Eshwa on 02/02/17.
 //  Copyright © 2017 Srivinayak Chaitanya Eshwa. All rights reserved.
 //
 
 import Foundation
 
-class ProjectsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class EventsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var ongoingProjects: [[String: String]] = []
-    var pastProjects: [[String: String]] = []
+    var upcomingEvents: [[String: AnyObject]] = []
+    var pastEvents: [[String: AnyObject]] = []
     
-    var navigationFunction: (([String: String]) -> Void)?
+    var navigationFunction: (([String: AnyObject])-> Void)?
     
     // MARK: - Collection View Data Source
     
@@ -22,25 +22,27 @@ class ProjectsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if collectionView.tag == 100 {
-            return self.ongoingProjects.count
+            return self.upcomingEvents.count
         }
         else {
-            return self.pastProjects.count
+            return self.pastEvents.count
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "innerCollectionViewCell", for: indexPath) as! ProjectsInnerCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "innerCollectionViewCell", for: indexPath) as! EventsInnerCollectionViewCell
         
         if collectionView.tag == 100 {
-            cell.project = self.ongoingProjects[indexPath.item]
+            cell.event = self.upcomingEvents[indexPath.item]
         }
         else {
-            cell.project = self.pastProjects[indexPath.item]
+            cell.event = self.pastEvents[indexPath.item]
         }
         
-        cell.backgroundColor = projectColors[indexPath.item % projectColors.count]
+        cell.backgroundColor = eventColors[indexPath.item % eventColors.count]
         
         cell.layer.cornerRadius = 8.0
         cell.clipsToBounds = true
@@ -53,10 +55,10 @@ class ProjectsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView.tag == 100 {
-            self.navigationFunction?(self.ongoingProjects[indexPath.item])
+            self.navigationFunction?(self.upcomingEvents[indexPath.item])
         }
         else {
-            self.navigationFunction?(self.pastProjects[indexPath.item])
+            self.navigationFunction?(self.pastEvents[indexPath.item])
         }
     }
     
@@ -78,9 +80,9 @@ class ProjectsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSo
         return UIEdgeInsets(top: 7.5, left: 20.0, bottom: 7.5, right: 20.0)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 2.5
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    //        return 2.5
+    //    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0

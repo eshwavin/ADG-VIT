@@ -58,4 +58,10 @@ let projectColors: [UIColor] = [color(red: 0, green: 118, blue: 255, alpha: 1.0)
 
 let projectDetailsBackgroundColor = color(red: 12, green: 20, blue: 30, alpha: 1.0)
 
+// MARK: - Events Colors
+
+let eventColors: [UIColor] = [color(red: 0, green: 118, blue: 255, alpha: 1.0), color(red: 37, green: 207, blue: 155, alpha: 1.0), color(red: 119, green: 60, blue: 170, alpha: 1.0)]
+
+let eventDetailsBackgroundColor = color(red: 12, green: 20, blue: 30, alpha: 1.0)
+
 
