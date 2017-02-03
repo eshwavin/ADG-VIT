@@ -62,6 +62,7 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.title = "Projects"
         
+        // get data
         self.getData()
         
         // set collectionviewdatasourcedelegate navigation function
@@ -194,6 +195,7 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
         if reachabilityStatus == NOACCESS {
             self.present(noInternetAccessAlert(), animated: true, completion: nil)
         }
+        self.getData()
     }
     
     
@@ -230,7 +232,7 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
     func getData() {
         // get projects data
         
-        if self.collectionViewDataSourceDelegate.ongoingProjects.count != 0 {
+        if self.collectionViewDataSourceDelegate.ongoingProjects.count == 0 {
             DataManager().getProjects(child: "ongoing", completion: didLoadOngoingData) {
                 if reachabilityStatus != NOACCESS {
                     self.present(showAlert("Could not fetch Ongoing Projects!", message: "Try again later"), animated: true, completion: nil)
@@ -238,7 +240,7 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
             }
         }
         
-        if self.collectionViewDataSourceDelegate.pastProjects.count != 0 {
+        if self.collectionViewDataSourceDelegate.pastProjects.count == 0 {
             DataManager().getProjects(child: "past", completion: didLoadPastData) {
                 if reachabilityStatus != NOACCESS {
                     self.present(showAlert("Could not fetch Past Projects!", message: "Try again later"), animated: true, completion: nil)

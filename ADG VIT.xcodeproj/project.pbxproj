@@ -12,6 +12,7 @@
 		11120BC41E3FC35100F990F8 /* WeatherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11120BC31E3FC35100F990F8 /* WeatherIcons.xcassets */; };
 		11190E0B1E427A5C00EF2532 /* ProjectsInnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11190E0A1E427A5C00EF2532 /* ProjectsInnerCollectionViewCell.swift */; };
 		1119B6811E3F5BE200CF009A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119B6801E3F5BE200CF009A /* Reachability.m */; };
+		11506BBA1E450AA500134974 /* TwoCreditCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */; };
 		116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA11E37E9EC00456C00 /* AppDelegate.swift */; };
 		116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA31E37E9EC00456C00 /* HomeViewController.swift */; };
 		116C1CA71E37E9EC00456C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116C1CA51E37E9EC00456C00 /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 		116C1CC21E37E9EC00456C00 /* ADG_VITUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CC11E37E9EC00456C00 /* ADG_VITUITests.swift */; };
 		116C1CD21E37EF8B00456C00 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */; };
 		116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CD41E37F63800456C00 /* MenuTableViewController.swift */; };
+		118BC4E61E44D81700C0742B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BC4E51E44D81600C0742B /* UIViewExtensions.swift */; };
+		118BC4E81E44FD4000C0742B /* UpcomingEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BC4E71E44FD4000C0742B /* UpcomingEventsViewController.swift */; };
 		119FD4EE1E3DDCC00021AE26 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4ED1E3DDCC00021AE26 /* NewsCollectionViewCell.swift */; };
 		119FD4F01E3DDFAA0021AE26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4EF1E3DDFAA0021AE26 /* Constants.swift */; };
 		119FD4F21E3E18710021AE26 /* HomeTableViewDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4F11E3E18710021AE26 /* HomeTableViewDataDelegate.swift */; };
@@ -40,6 +43,8 @@
 		11F810BF1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810BE1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift */; };
 		11F810C11E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810C01E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift */; };
 		11F810C31E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810C21E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift */; };
+		11F810CC1E4462FF008B83B2 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810CB1E4462FF008B83B2 /* EventDetailsViewController.swift */; };
+		11F810CE1E44BEE7008B83B2 /* EventsImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810CD1E44BEE7008B83B2 /* EventsImageCollectionViewCell.swift */; };
 		1E6EA025E0BD6625E4D80123 /* Pods_ADG_VIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116DDC06E6B2ED1658FAC02A /* Pods_ADG_VIT.framework */; };
 		81F52E8D1FA91B517A87DC94 /* Pods_ADG_VITUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078F660F61601B231081A0B8 /* Pods_ADG_VITUITests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +74,7 @@
 		11190E0A1E427A5C00EF2532 /* ProjectsInnerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsInnerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1119B67F1E3F5BE200CF009A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1119B6801E3F5BE200CF009A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCreditCourseViewController.swift; sourceTree = "<group>"; };
 		116C1C9E1E37E9EC00456C00 /* ADG VIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADG VIT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		116C1CA11E37E9EC00456C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116C1CA31E37E9EC00456C00 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 		116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		116C1CD41E37F63800456C00 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		116DDC06E6B2ED1658FAC02A /* Pods_ADG_VIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADG_VIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		118BC4E51E44D81600C0742B /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		118BC4E71E44FD4000C0742B /* UpcomingEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingEventsViewController.swift; sourceTree = "<group>"; };
 		119FD4ED1E3DDCC00021AE26 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		119FD4EF1E3DDFAA0021AE26 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		119FD4F11E3E18710021AE26 /* HomeTableViewDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewDataDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +111,8 @@
 		11F810BE1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		11F810C01E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsOuterCollectionViewCell.swift; sourceTree = "<group>"; };
 		11F810C21E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsInnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		11F810CB1E4462FF008B83B2 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		11F810CD1E44BEE7008B83B2 /* EventsImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		19F700DE4B8E0646B3CF75FC /* Pods-ADG VITUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VITUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VITUITests/Pods-ADG VITUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B57F9C6CF6272164996C193 /* Pods_ADG_VITTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADG_VITTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		589A9B71F65ED3689381AE57 /* Pods-ADG VITUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADG VITUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADG VITUITests/Pods-ADG VITUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 			children = (
 				119FD4EF1E3DDFAA0021AE26 /* Constants.swift */,
 				119FD4F71E3E43090021AE26 /* DataManager.swift */,
+				118BC4E51E44D81600C0742B /* UIViewExtensions.swift */,
 				116C1CCF1E37EF8A00456C00 /* ADG VIT-Bridging-Header.h */,
 			);
 			name = Utils;
@@ -177,6 +188,23 @@
 				119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		11506BB71E450A6700134974 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				118BC4E71E44FD4000C0742B /* UpcomingEventsViewController.swift */,
+				11F810CB1E4462FF008B83B2 /* EventDetailsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		11506BB81E450A8100134974 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				11F810CD1E44BEE7008B83B2 /* EventsImageCollectionViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		116C1C951E37E9EB00456C00 = {
@@ -206,10 +234,8 @@
 			children = (
 				116C1CA11E37E9EC00456C00 /* AppDelegate.swift */,
 				116C1CD41E37F63800456C00 /* MenuTableViewController.swift */,
-				11F810BC1E43413D008B83B2 /* EventsViewController.swift */,
-				11F810BE1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift */,
-				11F810C01E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift */,
-				11F810C21E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift */,
+				11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */,
+				11F810C41E44629B008B83B2 /* Events */,
 				11F810AD1E429518008B83B2 /* Projects */,
 				119FD4FF1E3E461D0021AE26 /* Home */,
 				11F810BB1E42AFE3008B83B2 /* Obj-C Libraries */,
@@ -351,6 +377,59 @@
 				11F810BA1E42AFC6008B83B2 /* UIImageViewAligned */,
 			);
 			name = "Obj-C Libraries";
+			sourceTree = "<group>";
+		};
+		11F810C41E44629B008B83B2 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				11F810CA1E4462E4008B83B2 /* Details */,
+				11F810C51E4462A4008B83B2 /* Main */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		11F810C51E4462A4008B83B2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				11F810C61E4462AF008B83B2 /* Cells */,
+				11F810C81E4462C6008B83B2 /* Controller */,
+				11F810C71E4462BA008B83B2 /* DataSourceDelegate */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		11F810C61E4462AF008B83B2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11F810C01E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift */,
+				11F810C21E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		11F810C71E4462BA008B83B2 /* DataSourceDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				11F810BE1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift */,
+			);
+			name = DataSourceDelegate;
+			sourceTree = "<group>";
+		};
+		11F810C81E4462C6008B83B2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11F810BC1E43413D008B83B2 /* EventsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		11F810CA1E4462E4008B83B2 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				11506BB81E450A8100134974 /* Cell */,
+				11506BB71E450A6700134974 /* Controller */,
+			);
+			name = Details;
 			sourceTree = "<group>";
 		};
 		3202B8C6E463AE474064D478 /* Pods */ = {
@@ -666,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F810BF1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift in Sources */,
+				11506BBA1E450AA500134974 /* TwoCreditCourseViewController.swift in Sources */,
 				11F810C11E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift in Sources */,
 				116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */,
 				119FD4F81E3E43090021AE26 /* DataManager.swift in Sources */,
@@ -675,17 +755,21 @@
 				119FD4F21E3E18710021AE26 /* HomeTableViewDataDelegate.swift in Sources */,
 				1119B6811E3F5BE200CF009A /* Reachability.m in Sources */,
 				116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */,
+				118BC4E61E44D81700C0742B /* UIViewExtensions.swift in Sources */,
 				116C1CD21E37EF8B00456C00 /* SWRevealViewController.m in Sources */,
 				11F810B41E4295AC008B83B2 /* ProjectDetailsViewController.swift in Sources */,
 				119FD4FC1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */,
 				119FD4EE1E3DDCC00021AE26 /* NewsCollectionViewCell.swift in Sources */,
 				11F810B91E42AD97008B83B2 /* UIImageViewAligned.m in Sources */,
 				11E995EA1E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift in Sources */,
+				11F810CE1E44BEE7008B83B2 /* EventsImageCollectionViewCell.swift in Sources */,
 				11E995E61E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift in Sources */,
 				11F810B61E429E30008B83B2 /* TriangleView.swift in Sources */,
 				119FD4F01E3DDFAA0021AE26 /* Constants.swift in Sources */,
 				11F810C31E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift in Sources */,
+				11F810CC1E4462FF008B83B2 /* EventDetailsViewController.swift in Sources */,
 				11F810BD1E43413D008B83B2 /* EventsViewController.swift in Sources */,
+				118BC4E81E44FD4000C0742B /* UpcomingEventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

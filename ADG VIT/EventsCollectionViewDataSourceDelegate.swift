@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EventsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+class EventsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var upcomingEvents: [[String: AnyObject]] = []
     var pastEvents: [[String: AnyObject]] = []
@@ -24,11 +24,17 @@ class EventsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView.tag == 100 {
+//            print("U:", self.upcomingEvents.count)
             return self.upcomingEvents.count
+            
         }
         else {
+//            print("P:", self.pastEvents.count)
             return self.pastEvents.count
+            
         }
+        
+        
         
     }
     
@@ -54,11 +60,23 @@ class EventsCollectionViewDataSourceDelegate: NSObject, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        
+        
         if collectionView.tag == 100 {
-            self.navigationFunction?(self.upcomingEvents[indexPath.item])
+            
+            var item = self.upcomingEvents[indexPath.item]
+            
+            item["category"] = "upcoming" as AnyObject
+            
+            self.navigationFunction?(item)
         }
         else {
-            self.navigationFunction?(self.pastEvents[indexPath.item])
+            
+            var item = self.pastEvents[indexPath.item]
+            
+            item["category"] = "past" as AnyObject
+            
+            self.navigationFunction?(item)
         }
     }
     

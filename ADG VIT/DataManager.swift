@@ -219,7 +219,6 @@ class DataManager {
                 }
             }
             else {
-                
                 DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
                     DispatchQueue.main.async {
                         completion(UIImage(named: "General")!)
@@ -250,7 +249,6 @@ class DataManager {
                     data.append(dict.value)
                 }
                 
-                
                 DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
                     DispatchQueue.main.async {
                         completion(data)
@@ -271,7 +269,7 @@ class DataManager {
         
     }
     
-    func getEventssImage(url: String, completion: @escaping (_ image: UIImage) -> Void) {
+    func getEventsImage(url: String, completion: @escaping (_ image: UIImage?) -> Void) {
         
         let firebaseStorageReference = FIRStorage.storage().reference(forURL: "gs://adg-vit-83017.appspot.com")
         
@@ -285,10 +283,9 @@ class DataManager {
                 }
             }
             else {
-                
                 DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
                     DispatchQueue.main.async {
-                        completion(UIImage(named: "General")!)
+                        completion(nil)
                     }
                 }
             }

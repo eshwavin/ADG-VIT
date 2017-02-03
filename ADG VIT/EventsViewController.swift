@@ -67,6 +67,12 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.title = "Events"
         
+        // getting data
+        
+        self.getData()
+        
+        // setting navigation of the collectionviewdatasourcedelegate
+        self.collectionViewDataSourceDelegate.navigationFunction = self.segue
         
     }
     
@@ -191,16 +197,32 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.present(noInternetAccessAlert(), animated: true, completion: nil)
         }
         // else load data
+        self.getData()
     }
 
     // MARK: - Events
     
     func didLoadUpcomingData(result: [[String: AnyObject]]) {
+        self.collectionViewDataSourceDelegate.upcomingEvents = result
+        
+        if self.upcomingEventsCollectionView != nil {
+            self.upcomingEventsCollectionView.reloadData()
+        }
+        else {
+            self.collectionView.reloadData()
+        }
         
     }
     
     func didLoadPastData(result: [[String: AnyObject]]) {
+        self.collectionViewDataSourceDelegate.pastEvents = result
         
+        if self.pastEventsCollectionView != nil {
+            self.pastEventsCollectionView.reloadData()
+        }
+        else {
+            self.collectionView.reloadData()
+        }
     }
     
     // MARK: - APIs
@@ -208,15 +230,15 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
     func getData() {
         // get projects data
         
-        if self.collectionViewDataSourceDelegate.upcomingEvents.count != 0 {
-            DataManager().getEvents(child: "ongoing", completion: didLoadUpcomingData) {
+        if self.collectionViewDataSourceDelegate.upcomingEvents.count == 0 {
+            DataManager().getEvents(child: "upcoming", completion: didLoadUpcomingData) {
                 if reachabilityStatus != NOACCESS {
                     self.present(showAlert("Could not fetch Ongoing Projects!", message: "Try again later"), animated: true, completion: nil)
                 }
             }
         }
         
-        if self.collectionViewDataSourceDelegate.pastEvents.count != 0 {
+        if self.collectionViewDataSourceDelegate.pastEvents.count == 0 {
             DataManager().getEvents(child: "past", completion: didLoadPastData) {
                 if reachabilityStatus != NOACCESS {
                     self.present(showAlert("Could not fetch Past Projects!", message: "Try again later"), animated: true, completion: nil)
@@ -227,14 +249,41 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
 
     
-    /*
+    
     // MARK: - Navigation
 
+    func segue(item: [String: AnyObject]) {
+        self.selectedEvent = item
+        
+        if item["category"] as! String == "upcoming" {
+            self.performSegue(withIdentifier: "showUpcoming", sender: self)
+        }
+        else {
+            self.performSegue(withIdentifier: "showPast", sender: self)
+        }
+        
+        
+        
+    }
+    
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showPast" {
+            let destinationViewController = segue.destination as! EventDetailsViewController
+            destinationViewController.event = self.selectedEvent
+        }
+        else if segue.identifier == "showUpcoming" {
+            let destinationViewController = segue.destination as! UpcomingEventsViewController
+            destinationViewController.event = self.selectedEvent
+        }
+        
     }
-    */
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
+
 
 }

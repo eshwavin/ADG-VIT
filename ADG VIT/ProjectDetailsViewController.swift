@@ -16,6 +16,7 @@ class ProjectDetailsViewController: UIViewController {
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var projectTitleHead: UIView!
+    @IBOutlet weak var projectTitleHeadLabel: UILabel!
     @IBOutlet weak var projectTextView: UITextView!
     
     @IBOutlet weak var iOSButton: UIButton!
@@ -25,7 +26,6 @@ class ProjectDetailsViewController: UIViewController {
 
     @IBOutlet weak var projectImageViewHeightConstraint: NSLayoutConstraint!
     
-    var height: CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +34,12 @@ class ProjectDetailsViewController: UIViewController {
         
         self.projectImageView.alignTop = true
         
+        self.projectTitleHeadLabel.text = self.project!["name"]
         self.projectTitle.text = self.project!["name"]
         self.projectTextView.text = self.project!["description"]
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.001) { 
-            self.projectTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
+            self.projectTextView.setContentOffset(CGPoint.zero, animated: false)
         }
         
         // reachability

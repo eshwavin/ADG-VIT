@@ -37,7 +37,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: Table View Variables
     
-    
     var VITTableView: UITableView!
     var ADGTableView: UITableView!
     
@@ -84,16 +83,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // getting news
         
-        DataManager().getNews(child: "VIT", completion: didLoadVITData) {
-            if reachabilityStatus != NOACCESS {
-                self.present(showAlert("Could not fetch VIT News!", message: "Try again later"), animated: true, completion: nil)
-            }
-        }
-        DataManager().getNews(child: "ADG", completion: didLoadADGData) {
-            if reachabilityStatus != NOACCESS {
-                self.present(showAlert("Could not fetch ADG News!", message: "Try again later"), animated: true, completion: nil)
-            }
-        }
+        self.getData()
         
         // location manager
         self.locationManager.delegate = self
@@ -288,6 +278,25 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: News
     
+    func getData() {
+        
+        if self.tableViewDelegateDataSource.VITNews.count == 0 {
+            DataManager().getNews(child: "VIT", completion: didLoadVITData) {
+                if reachabilityStatus != NOACCESS {
+                    self.present(showAlert("Could not fetch VIT News!", message: "Try again later"), animated: true, completion: nil)
+                }
+            }
+        }
+        
+        if self.tableViewDelegateDataSource.ADGNews.count == 0 {
+            DataManager().getNews(child: "ADG", completion: didLoadADGData) {
+                if reachabilityStatus != NOACCESS {
+                    self.present(showAlert("Could not fetch ADG News!", message: "Try again later"), animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
     func didLoadVITData(result: [String]) {
         
         self.tableViewDelegateDataSource.VITNews = result
@@ -315,7 +324,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: Weather
 
-    
     
     func runWeatherAPI(_ location: CLLocation) {
         
@@ -355,6 +363,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func manageLocation() {
         
         if self.timer != nil && self.timer.isValid {
+            self.updateLocation()
             return
         }
         
@@ -396,7 +405,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
 
-    // MARK: Reachability
+    // MARK: - Reachability
     
     func reachabilityChanged() {
         if reachabilityStatus == NOACCESS {
@@ -404,6 +413,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         else {
             self.manageLocation()
+            self.getData()
         }
     }
     

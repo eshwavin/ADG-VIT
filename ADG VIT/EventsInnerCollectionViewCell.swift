@@ -22,6 +22,23 @@ class EventsInnerCollectionViewCell: UICollectionViewCell {
     
     func updateCell() {
         
+        if let desc = self.event["description"] as? String {
+            
+            self.eventDetailsTextView.text = desc
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.001, execute: { 
+                self.eventDetailsTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
+            })
+        }
+        
+        if let name = self.event["name"] as? String {
+            self.eventNameLabel.text = name
+        }
+        
+        if let date = self.event["date"] as? String {
+            self.eventDateLabel.text = date
+        }
+        
     }
     
 }
