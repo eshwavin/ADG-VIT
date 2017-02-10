@@ -51,10 +51,6 @@ class EventDetailsViewController: UIViewController, UICollectionViewDataSource, 
             self.eventTextView.setContentOffset(CGPoint.zero, animated: false)
         }
         
-        // get images
-        
-//        self.getImages()
-        
         if self.eventImages.count == 0 {
             self.scrollLeftButton.isHidden = true
             self.scrollRightButton.isHidden = true
@@ -179,14 +175,18 @@ class EventDetailsViewController: UIViewController, UICollectionViewDataSource, 
         
         if self.eventCollectionViewHeightConstraint.constant == 0 {
             self.eventCollectionViewHeightConstraint.constant = (self.view.frame.height) * 0.6
+//            self.imageHideRevealButton.setBackgroundImage(UIImage(named: "uparrow"), for: UIControlState.normal)
+            
         }
         else {
             self.eventCollectionViewHeightConstraint.constant = 0
+//            self.imageHideRevealButton.setBackgroundImage(UIImage(named: "downarrow"), for: UIControlState.normal)
             
         }
         
         
-        UIView.animate(withDuration: 1.0) {
+        
+        UIView.animate(withDuration: 1.0, animations: {
             
             if self.eventTitleHead.alpha == 0 {
                 self.eventTitleHead.alpha = 1
@@ -195,11 +195,29 @@ class EventDetailsViewController: UIViewController, UICollectionViewDataSource, 
                 self.eventTitleHead.alpha = 0
             }
             
+            if self.eventCollectionViewHeightConstraint.constant != 0 {
+                let transform = CGAffineTransform.identity.rotated(by: CGFloat(M_PI))
+                self.imageHideRevealButton.transform = transform
+                
+            }
+            else {
+                
+                self.imageHideRevealButton.transform = CGAffineTransform.identity
+                
+            }
+            
             self.view.layoutIfNeeded()
             
-        }
+        })
+        
+        
         self.collectionView.reloadData()
-        self.collectionView.scrollToItem(at: self.currentCollectionViewItem, at: UICollectionViewScrollPosition.left, animated: false)
+        
+        if self.eventImages.count != 0 {
+            self.collectionView.scrollToItem(at: self.currentCollectionViewItem, at: UICollectionViewScrollPosition.left, animated: false)
+        }
+        
+        
         
     }
     

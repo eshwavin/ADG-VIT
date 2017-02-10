@@ -64,15 +64,17 @@ class ProjectDetailsViewController: UIViewController {
         
         if self.projectImageViewHeightConstraint.constant == 0 {
             self.projectImageViewHeightConstraint.constant = (self.view.frame.height) * 0.6
+//            self.imageHideRevealButton.setBackgroundImage(UIImage(named: "uparrow"), for: UIControlState.normal)
         }
         else {
             self.projectImageViewHeightConstraint.constant = 0
+//            self.imageHideRevealButton.setBackgroundImage(UIImage(named: "downarrow"), for: UIControlState.normal)
             
         }
         
+
         
-        UIView.animate(withDuration: 1.0) {
-            
+        UIView.animate(withDuration: 1.0, animations: { 
             if self.projectTitleHead.alpha == 0 {
                 self.projectTitleHead.alpha = 1
             }
@@ -80,8 +82,21 @@ class ProjectDetailsViewController: UIViewController {
                 self.projectTitleHead.alpha = 0
             }
             
+            if self.projectImageViewHeightConstraint.constant != 0 {
+                let transform = CGAffineTransform.identity.rotated(by: CGFloat(M_PI))
+                self.imageHideRevealButton.transform = transform
+                
+            }
+            else {
+                
+                self.imageHideRevealButton.transform = CGAffineTransform.identity
+                
+            }
+            
             self.view.layoutIfNeeded()
-        }
+        })
+        
+        
     }
     
     func reachabilityChanged() {
@@ -96,6 +111,36 @@ class ProjectDetailsViewController: UIViewController {
         
     }
 
+    @IBAction func goToProjectLink(_ sender: UIButton) {
+        
+        var key = ""
+        
+        if sender.tag == 1 {
+            key = "iosLink"
+        }
+        
+        else if sender.tag == 2 {
+            key = "androidLink"
+        }
+        else {
+            key = "webLink"
+        }
+        
+        if self.project![key]! == "Coming Soon" {
+            self.present(showAlert("Coming Soon", message: "We are working on the project and will release it as soon as possible"), animated: true, completion: nil)
+        }
+        else if self.project![key] == "Not Started" {
+            self.present(showAlert("Not Plannned", message: "We have not started working on the web version yet. We will get started as soon as we finish our current projects"), animated: true, completion: nil)
+        }
+        else {
+            let URL = self.project![key]! 
+            
+            let url = NSURL(string: URL) as! URL
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

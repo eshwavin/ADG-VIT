@@ -44,9 +44,10 @@ class UpcomingEventsViewController: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.exitButton.layer.cornerRadius = self.exitButton.frame.height / 2.0
     }
     
     @IBAction func showBrochure(_ sender: UIButton) {

@@ -13,6 +13,8 @@
 		11190E0B1E427A5C00EF2532 /* ProjectsInnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11190E0A1E427A5C00EF2532 /* ProjectsInnerCollectionViewCell.swift */; };
 		1119B6811E3F5BE200CF009A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119B6801E3F5BE200CF009A /* Reachability.m */; };
 		11506BBA1E450AA500134974 /* TwoCreditCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */; };
+		11506BBC1E45E84A00134974 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11506BBB1E45E84A00134974 /* TeamViewController.swift */; };
+		11506BC01E4A359600134974 /* OtherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11506BBF1E4A359500134974 /* OtherIcons.xcassets */; };
 		116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA11E37E9EC00456C00 /* AppDelegate.swift */; };
 		116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA31E37E9EC00456C00 /* HomeViewController.swift */; };
 		116C1CA71E37E9EC00456C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116C1CA51E37E9EC00456C00 /* Main.storyboard */; };
@@ -24,6 +26,9 @@
 		116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CD41E37F63800456C00 /* MenuTableViewController.swift */; };
 		118BC4E61E44D81700C0742B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BC4E51E44D81600C0742B /* UIViewExtensions.swift */; };
 		118BC4E81E44FD4000C0742B /* UpcomingEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118BC4E71E44FD4000C0742B /* UpcomingEventsViewController.swift */; };
+		119B34FB1E4E2B95006F3853 /* TwoCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B34FA1E4E2B95006F3853 /* TwoCreditViewController.swift */; };
+		119B35011E4E3D26006F3853 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 119B35001E4E3D26006F3853 /* iCarousel.m */; };
+		119B35041E4E4592006F3853 /* AttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B35031E4E4592006F3853 /* AttendanceView.swift */; };
 		119FD4EE1E3DDCC00021AE26 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4ED1E3DDCC00021AE26 /* NewsCollectionViewCell.swift */; };
 		119FD4F01E3DDFAA0021AE26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4EF1E3DDFAA0021AE26 /* Constants.swift */; };
 		119FD4F21E3E18710021AE26 /* HomeTableViewDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4F11E3E18710021AE26 /* HomeTableViewDataDelegate.swift */; };
@@ -75,6 +80,8 @@
 		1119B67F1E3F5BE200CF009A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1119B6801E3F5BE200CF009A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCreditCourseViewController.swift; sourceTree = "<group>"; };
+		11506BBB1E45E84A00134974 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		11506BBF1E4A359500134974 /* OtherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OtherIcons.xcassets; sourceTree = "<group>"; };
 		116C1C9E1E37E9EC00456C00 /* ADG VIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADG VIT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		116C1CA11E37E9EC00456C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116C1CA31E37E9EC00456C00 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +102,10 @@
 		116DDC06E6B2ED1658FAC02A /* Pods_ADG_VIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADG_VIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		118BC4E51E44D81600C0742B /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		118BC4E71E44FD4000C0742B /* UpcomingEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingEventsViewController.swift; sourceTree = "<group>"; };
+		119B34FA1E4E2B95006F3853 /* TwoCreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCreditViewController.swift; sourceTree = "<group>"; };
+		119B34FF1E4E3D26006F3853 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		119B35001E4E3D26006F3853 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		119B35031E4E4592006F3853 /* AttendanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceView.swift; sourceTree = "<group>"; };
 		119FD4ED1E3DDCC00021AE26 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		119FD4EF1E3DDFAA0021AE26 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		119FD4F11E3E18710021AE26 /* HomeTableViewDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewDataDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +195,7 @@
 				1119B6831E3F5C1700CF009A /* Utils */,
 				116C1CA81E37E9EC00456C00 /* Assets.xcassets */,
 				11120BC31E3FC35100F990F8 /* WeatherIcons.xcassets */,
+				11506BBF1E4A359500134974 /* OtherIcons.xcassets */,
 				116C1CAD1E37E9EC00456C00 /* Info.plist */,
 				119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */,
 			);
@@ -234,7 +246,8 @@
 			children = (
 				116C1CA11E37E9EC00456C00 /* AppDelegate.swift */,
 				116C1CD41E37F63800456C00 /* MenuTableViewController.swift */,
-				11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */,
+				119B34FE1E4E3CFB006F3853 /* Our Team */,
+				119B34FC1E4E3CE1006F3853 /* Two Credit Course */,
 				11F810C41E44629B008B83B2 /* Events */,
 				11F810AD1E429518008B83B2 /* Projects */,
 				119FD4FF1E3E461D0021AE26 /* Home */,
@@ -270,6 +283,41 @@
 				116C1CD11E37EF8B00456C00 /* SWRevealViewController.m */,
 			);
 			name = SWRevealView;
+			sourceTree = "<group>";
+		};
+		119B34FC1E4E3CE1006F3853 /* Two Credit Course */ = {
+			isa = PBXGroup;
+			children = (
+				119B34FD1E4E3CF1006F3853 /* Controller */,
+			);
+			name = "Two Credit Course";
+			sourceTree = "<group>";
+		};
+		119B34FD1E4E3CF1006F3853 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */,
+				119B34FA1E4E2B95006F3853 /* TwoCreditViewController.swift */,
+				119B35031E4E4592006F3853 /* AttendanceView.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		119B34FE1E4E3CFB006F3853 /* Our Team */ = {
+			isa = PBXGroup;
+			children = (
+				11506BBB1E45E84A00134974 /* TeamViewController.swift */,
+			);
+			name = "Our Team";
+			sourceTree = "<group>";
+		};
+		119B35021E4E3D2B006F3853 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				119B34FF1E4E3D26006F3853 /* iCarousel.h */,
+				119B35001E4E3D26006F3853 /* iCarousel.m */,
+			);
+			name = iCarousel;
 			sourceTree = "<group>";
 		};
 		119FD4FF1E3E461D0021AE26 /* Home */ = {
@@ -372,6 +420,7 @@
 		11F810BB1E42AFE3008B83B2 /* Obj-C Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				119B35021E4E3D2B006F3853 /* iCarousel */,
 				1119B6821E3F5C0D00CF009A /* Reachability */,
 				116C1CD31E37EF9300456C00 /* SWRevealView */,
 				11F810BA1E42AFC6008B83B2 /* UIImageViewAligned */,
@@ -580,6 +629,7 @@
 				119FD4F41E3E19BC0021AE26 /* GoogleService-Info.plist in Resources */,
 				116C1CA91E37E9EC00456C00 /* Assets.xcassets in Resources */,
 				116C1CA71E37E9EC00456C00 /* Main.storyboard in Resources */,
+				11506BC01E4A359600134974 /* OtherIcons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,6 +801,8 @@
 				119FD4F81E3E43090021AE26 /* DataManager.swift in Sources */,
 				11120BC21E3FACC400F990F8 /* ProjectsViewController.swift in Sources */,
 				11190E0B1E427A5C00EF2532 /* ProjectsInnerCollectionViewCell.swift in Sources */,
+				119B35011E4E3D26006F3853 /* iCarousel.m in Sources */,
+				11506BBC1E45E84A00134974 /* TeamViewController.swift in Sources */,
 				116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */,
 				119FD4F21E3E18710021AE26 /* HomeTableViewDataDelegate.swift in Sources */,
 				1119B6811E3F5BE200CF009A /* Reachability.m in Sources */,
@@ -761,8 +813,10 @@
 				119FD4FC1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */,
 				119FD4EE1E3DDCC00021AE26 /* NewsCollectionViewCell.swift in Sources */,
 				11F810B91E42AD97008B83B2 /* UIImageViewAligned.m in Sources */,
+				119B35041E4E4592006F3853 /* AttendanceView.swift in Sources */,
 				11E995EA1E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift in Sources */,
 				11F810CE1E44BEE7008B83B2 /* EventsImageCollectionViewCell.swift in Sources */,
+				119B34FB1E4E2B95006F3853 /* TwoCreditViewController.swift in Sources */,
 				11E995E61E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift in Sources */,
 				11F810B61E429E30008B83B2 /* TriangleView.swift in Sources */,
 				119FD4F01E3DDFAA0021AE26 /* Constants.swift in Sources */,

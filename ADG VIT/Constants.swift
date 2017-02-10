@@ -64,4 +64,8 @@ let eventColors: [UIColor] = [color(red: 0, green: 118, blue: 255, alpha: 1.0), 
 
 let eventDetailsBackgroundColor = color(red: 12, green: 20, blue: 30, alpha: 1.0)
 
+// MARK: - Two Credit Course
+
+let borderColor = color(red: 0, green: 118, blue: 255, alpha: 1.0)
+
 
