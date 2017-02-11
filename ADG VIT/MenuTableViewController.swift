@@ -12,6 +12,8 @@ class MenuTableViewController: UITableViewController {
 
     @IBOutlet var menuImageViews: [UIImageView]!
     
+    var tapGestureRecognizer = UITapGestureRecognizer()
+    
     var selectedPage: Int = 0
     
     override func viewDidLoad() {
@@ -24,14 +26,41 @@ class MenuTableViewController: UITableViewController {
         
         self.menuImageViews[self.selectedPage].image = UIImage(named: "Double Circle")
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
     }
-
+    
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        let frontViewController = self.revealViewController().frontViewController
+//        
+//        frontViewController?.view.isUserInteractionEnabled = false
+//        self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.revealViewController().rightRevealToggle(_:)))
+//        
+//        frontViewController?.view.addGestureRecognizer(self.tapGestureRecognizer)
+//        
+//        frontViewController?.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        
+//        let frontViewController = self.revealViewController().frontViewController
+//        
+//        frontViewController?.view.isUserInteractionEnabled = true
+//        
+//        for gestureRecognizer in (frontViewController?.view.gestureRecognizers)! {
+//            if gestureRecognizer == self.tapGestureRecognizer || gestureRecognizer == self.revealViewController().panGestureRecognizer() {
+//                
+//                frontViewController?.view.removeGestureRecognizer(gestureRecognizer)
+//                
+//            }
+//        }
+//        
+//    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

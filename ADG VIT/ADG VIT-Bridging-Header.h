@@ -5,3 +5,4 @@
 #import "SWRevealViewController.h"
 #import "Reachability.h"
 #import "UIImageViewAligned.h"
+#import "iCarousel.h"

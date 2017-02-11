@@ -66,6 +66,13 @@ let eventDetailsBackgroundColor = color(red: 12, green: 20, blue: 30, alpha: 1.0
 
 // MARK: - Two Credit Course
 
-let borderColor = color(red: 0, green: 118, blue: 255, alpha: 1.0)
+let borderColor = color(red: 2, green: 128, blue: 186, alpha: 1.0)
+
+let attendedColor = color(red: 120, green: 202, blue: 212, alpha: 1.0)
+let absentColor = color(red: 231, green: 78, blue: 97, alpha: 1.0)
+
+// MARK: - Team
+
+let teamColor = color(red: 37, green: 207, blue: 155, alpha: 1.0)
 
 

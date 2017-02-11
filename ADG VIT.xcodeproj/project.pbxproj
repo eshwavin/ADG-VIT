@@ -39,8 +39,14 @@
 		119FD4FC1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */; };
 		119FD4FD1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */; };
 		119FD4FE1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */; };
+		11AF6A201E4E99340081E1DC /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF6A1F1E4E99340081E1DC /* EventsTableViewCell.swift */; };
+		11AF6A221E4EAC250081E1DC /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF6A211E4EAC250081E1DC /* DeveloperViewController.swift */; };
+		11AF6A241E4EAFA40081E1DC /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AF6A231E4EAFA40081E1DC /* People.xcassets */; };
+		11AF6A261E4EB09E0081E1DC /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF6A251E4EB09E0081E1DC /* FeedbackViewController.swift */; };
 		11E995E61E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E995E51E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift */; };
 		11E995EA1E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E995E91E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift */; };
+		11EB27781E4E5D250070B512 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EB27771E4E5D250070B512 /* UserData.swift */; };
+		11EB277A1E4E88CC0070B512 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EB27791E4E88CC0070B512 /* Events.swift */; };
 		11F810B41E4295AC008B83B2 /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810B31E4295AC008B83B2 /* ProjectDetailsViewController.swift */; };
 		11F810B61E429E30008B83B2 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F810B51E429E30008B83B2 /* TriangleView.swift */; };
 		11F810B91E42AD97008B83B2 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F810B81E42AD97008B83B2 /* UIImageViewAligned.m */; };
@@ -112,8 +118,14 @@
 		119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		119FD4F71E3E43090021AE26 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		119FD4FB1E3E45B10021AE26 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		11AF6A1F1E4E99340081E1DC /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		11AF6A211E4EAC250081E1DC /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
+		11AF6A231E4EAFA40081E1DC /* People.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = People.xcassets; sourceTree = "<group>"; };
+		11AF6A251E4EB09E0081E1DC /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		11E995E51E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsOuterCollectionViewCell.swift; sourceTree = "<group>"; };
 		11E995E91E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewDataSourceDelegate.swift; sourceTree = "<group>"; };
+		11EB27771E4E5D250070B512 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		11EB27791E4E88CC0070B512 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		11F810B31E4295AC008B83B2 /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
 		11F810B51E429E30008B83B2 /* TriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		11F810B71E42AD96008B83B2 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
@@ -196,6 +208,7 @@
 				116C1CA81E37E9EC00456C00 /* Assets.xcassets */,
 				11120BC31E3FC35100F990F8 /* WeatherIcons.xcassets */,
 				11506BBF1E4A359500134974 /* OtherIcons.xcassets */,
+				11AF6A231E4EAFA40081E1DC /* People.xcassets */,
 				116C1CAD1E37E9EC00456C00 /* Info.plist */,
 				119FD4F31E3E19BC0021AE26 /* GoogleService-Info.plist */,
 			);
@@ -246,6 +259,8 @@
 			children = (
 				116C1CA11E37E9EC00456C00 /* AppDelegate.swift */,
 				116C1CD41E37F63800456C00 /* MenuTableViewController.swift */,
+				11AF6A281E4F14C10081E1DC /* Feedback */,
+				11AF6A271E4F14BA0081E1DC /* Developer */,
 				119B34FE1E4E3CFB006F3853 /* Our Team */,
 				119B34FC1E4E3CE1006F3853 /* Two Credit Course */,
 				11F810C41E44629B008B83B2 /* Events */,
@@ -289,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				119B34FD1E4E3CF1006F3853 /* Controller */,
+				11AF6A1E1E4E96E70081E1DC /* Model */,
+				11EB27761E4E5C470070B512 /* View */,
 			);
 			name = "Two Credit Course";
 			sourceTree = "<group>";
@@ -298,7 +315,6 @@
 			children = (
 				11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */,
 				119B34FA1E4E2B95006F3853 /* TwoCreditViewController.swift */,
-				119B35031E4E4592006F3853 /* AttendanceView.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -353,6 +369,40 @@
 				119FD4F11E3E18710021AE26 /* HomeTableViewDataDelegate.swift */,
 			);
 			name = "Data Source Delegate";
+			sourceTree = "<group>";
+		};
+		11AF6A1E1E4E96E70081E1DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11EB27771E4E5D250070B512 /* UserData.swift */,
+				11EB27791E4E88CC0070B512 /* Events.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		11AF6A271E4F14BA0081E1DC /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				11AF6A211E4EAC250081E1DC /* DeveloperViewController.swift */,
+			);
+			name = Developer;
+			sourceTree = "<group>";
+		};
+		11AF6A281E4F14C10081E1DC /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				11AF6A251E4EB09E0081E1DC /* FeedbackViewController.swift */,
+			);
+			name = Feedback;
+			sourceTree = "<group>";
+		};
+		11EB27761E4E5C470070B512 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				119B35031E4E4592006F3853 /* AttendanceView.swift */,
+				11AF6A1F1E4E99340081E1DC /* EventsTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		11F810AD1E429518008B83B2 /* Projects */ = {
@@ -629,6 +679,7 @@
 				119FD4F41E3E19BC0021AE26 /* GoogleService-Info.plist in Resources */,
 				116C1CA91E37E9EC00456C00 /* Assets.xcassets in Resources */,
 				116C1CA71E37E9EC00456C00 /* Main.storyboard in Resources */,
+				11AF6A241E4EAFA40081E1DC /* People.xcassets in Resources */,
 				11506BC01E4A359600134974 /* OtherIcons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,6 +848,7 @@
 				11F810BF1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift in Sources */,
 				11506BBA1E450AA500134974 /* TwoCreditCourseViewController.swift in Sources */,
 				11F810C11E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift in Sources */,
+				11AF6A261E4EB09E0081E1DC /* FeedbackViewController.swift in Sources */,
 				116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */,
 				119FD4F81E3E43090021AE26 /* DataManager.swift in Sources */,
 				11120BC21E3FACC400F990F8 /* ProjectsViewController.swift in Sources */,
@@ -804,6 +856,7 @@
 				119B35011E4E3D26006F3853 /* iCarousel.m in Sources */,
 				11506BBC1E45E84A00134974 /* TeamViewController.swift in Sources */,
 				116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */,
+				11AF6A201E4E99340081E1DC /* EventsTableViewCell.swift in Sources */,
 				119FD4F21E3E18710021AE26 /* HomeTableViewDataDelegate.swift in Sources */,
 				1119B6811E3F5BE200CF009A /* Reachability.m in Sources */,
 				116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */,
@@ -813,6 +866,7 @@
 				119FD4FC1E3E45B10021AE26 /* HomeTableViewCell.swift in Sources */,
 				119FD4EE1E3DDCC00021AE26 /* NewsCollectionViewCell.swift in Sources */,
 				11F810B91E42AD97008B83B2 /* UIImageViewAligned.m in Sources */,
+				11EB27781E4E5D250070B512 /* UserData.swift in Sources */,
 				119B35041E4E4592006F3853 /* AttendanceView.swift in Sources */,
 				11E995EA1E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift in Sources */,
 				11F810CE1E44BEE7008B83B2 /* EventsImageCollectionViewCell.swift in Sources */,
@@ -821,7 +875,9 @@
 				11F810B61E429E30008B83B2 /* TriangleView.swift in Sources */,
 				119FD4F01E3DDFAA0021AE26 /* Constants.swift in Sources */,
 				11F810C31E4349DB008B83B2 /* EventsInnerCollectionViewCell.swift in Sources */,
+				11EB277A1E4E88CC0070B512 /* Events.swift in Sources */,
 				11F810CC1E4462FF008B83B2 /* EventDetailsViewController.swift in Sources */,
+				11AF6A221E4EAC250081E1DC /* DeveloperViewController.swift in Sources */,
 				11F810BD1E43413D008B83B2 /* EventsViewController.swift in Sources */,
 				118BC4E81E44FD4000C0742B /* UpcomingEventsViewController.swift in Sources */,
 			);

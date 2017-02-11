@@ -24,14 +24,12 @@ class AttendanceView: UIView {
     
     override func didMoveToSuperview() {
         
-        self.path = UIBezierPath(arcCenter: CGPoint(x: self.frame.width / 2.0, y: self.frame.height / 2.0), radius: self.frame.width / 2.0, startAngle: 0, endAngle: CGFloat(M_PI) * 2.0 * self.percentage, clockwise: true)
-        
         let backLayer = CAShapeLayer()
         backLayer.path = UIBezierPath(ovalIn: self.bounds).cgPath
         backLayer.fillColor = UIColor.clear.cgColor
         backLayer.strokeColor = UIColor.white.cgColor
         backLayer.lineWidth = 4.0
-        
+        self.layer.addSublayer(backLayer)
         
 //        self.shapeLayer.path = path.cgPath
         self.shapeLayer.lineWidth = 4.0
@@ -42,7 +40,6 @@ class AttendanceView: UIView {
         
         self.layer.addSublayer(self.shapeLayer)
         
-        self.prepareForEditing()
     }
     
     func prepareForEditing() {

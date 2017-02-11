@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate {
 
@@ -159,6 +160,30 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate {
                 
                 if self.registerNumberTextField.text! == registerNumber && self.phoneNumberTextField.text! == phoneNumber {
                     
+                    
+                    let user = UserData()
+                    user.name = userData["name"] as! String
+                    user.email = userData["email"] as! String
+                    let events = userData["events"] as! [String : AnyObject]
+                    
+                    for event in events {
+                        
+                        let value = event.value as! [String: AnyObject]
+                        
+                        let realmEvent = Events()
+                        realmEvent.name = value["name"] as! String
+                        realmEvent.attended = value["attended"] as! String == "YES" ? true : false
+                        realmEvent.date = value["date"] as! String
+                        realmEvent.hours = Float((value["hours"] as! NSString).floatValue)
+
+                        user.events.append(realmEvent)
+                        
+                    }
+                    
+                    try! realm.write {
+                        realm.add(user)
+                    }
+                    
                     UserDefaults.standard.set(true, forKey: "LoggedIn")
                     
                     self.performSegue(withIdentifier: "goToMainPage", sender: self)
@@ -223,14 +248,4 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
