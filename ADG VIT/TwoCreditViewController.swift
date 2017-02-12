@@ -59,6 +59,7 @@ class TwoCreditViewController: UIViewController, UITableViewDataSource, UITableV
         var user = UserData()
         
         if let us = realm.objects(UserData.self).first {
+            
             self.title = us.name
             
             for event in us.events {
@@ -212,7 +213,6 @@ class TwoCreditViewController: UIViewController, UITableViewDataSource, UITableV
                 realm.delete(realm.objects(Events.self))
                 realm.delete(realm.objects(UserData.self))
             }
-            
             
             self.navigationController!.popViewController(animated: true)
             

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Firebase
         
         FIRApp.configure()
-        
+        FIRDatabase.database().persistenceEnabled = true
         
         // Reachability
         

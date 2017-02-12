@@ -65,17 +65,6 @@ class MenuTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if let controller = self.revealViewController().frontViewController as? HomeViewController {
-            
-            if controller.timer != nil {
-                controller.timer.invalidate()
-            }
-        }
-    }
     
     // MARK: - Table view data source
 

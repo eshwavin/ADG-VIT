@@ -45,8 +45,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     let locationManager = CLLocationManager()
     
-    var timer: Timer!
-    
     // MARK: - View Cycle
     
     override func viewDidLoad() {
@@ -89,27 +87,26 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-            // 1. ask for authorization
-        if CLLocationManager.authorizationStatus() == .notDetermined {
-            self.locationManager.requestWhenInUseAuthorization()
-            self.updateLocation()
-            
-            self.timer = Timer.scheduledTimer(timeInterval: 60*60, target: self, selector: #selector(HomeViewController.updateLocation), userInfo: nil, repeats: true)
-        }
-            // 2. authorization were denied
-        else if CLLocationManager.authorizationStatus() == .denied {
-            self.weatherLabel.text = "Location Services Denied!"
-            
-            self.present(showAlert("Cannot access location", message: "Location services were previously denied. Please enable location services for this app in Settings."), animated: true, completion: nil)
-        }
-            // 3. we do have authorization
-        else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            
-            self.updateLocation()
-            
-            self.timer = Timer.scheduledTimer(timeInterval: 60*60, target: self, selector: #selector(HomeViewController.updateLocation), userInfo: nil, repeats: true)
-            
-        }
+//            // 1. ask for authorization
+//        if CLLocationManager.authorizationStatus() == .notDetermined {
+//            self.locationManager.requestWhenInUseAuthorization()
+//            self.updateLocation()
+//            
+//        }
+//            // 2. authorization were denied
+//        else if CLLocationManager.authorizationStatus() == .denied {
+//            self.weatherLabel.text = "Location Services Denied!"
+//            
+//            self.present(showAlert("Cannot access location", message: "Location services were previously denied. Please enable location services for this app in Settings."), animated: true, completion: nil)
+//        }
+//            // 3. we do have authorization
+//        else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+//            
+//            self.updateLocation()
+//            
+//        }
+        
+        
         
         
     }
@@ -126,29 +123,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if self.timer == nil || self.weatherLabel.text == "Location Services Denied!" {
+        if self.weatherLabel.text == "Location Services Denied!" && CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             self.updateLocation()
             
-            self.timer = Timer.scheduledTimer(timeInterval: 60*60, target: self, selector: #selector(HomeViewController.updateLocation), userInfo: nil, repeats: true)
-        }
-        else if !self.timer.isValid {
-            self.updateLocation()
-            
-            self.timer = Timer.scheduledTimer(timeInterval: 60*60, target: self, selector: #selector(HomeViewController.updateLocation), userInfo: nil, repeats: true)
         }
         
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        self.timer.invalidate()
-    }
+
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
-        self.timer.invalidate()
     }
     
     // MARK: - Collection View Data Source
@@ -362,17 +347,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func manageLocation() {
         
-        if self.timer != nil && self.timer.isValid {
-            self.updateLocation()
-            return
-        }
         
         // 1. ask for authorization
         if CLLocationManager.authorizationStatus() == .notDetermined {
             self.locationManager.requestWhenInUseAuthorization()
             self.updateLocation()
             
-            self.timer = Timer.scheduledTimer(timeInterval: 60*60, target: self, selector: #selector(HomeViewController.updateLocation), userInfo: nil, repeats: true)
         }
             // 2. authorization were denied
         else if CLLocationManager.authorizationStatus() == .denied {
@@ -384,8 +364,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             
             self.updateLocation()
-            
-            self.timer = Timer.scheduledTimer(timeInterval: 60*60, target: self, selector: #selector(HomeViewController.updateLocation), userInfo: nil, repeats: true)
             
         }
     }
