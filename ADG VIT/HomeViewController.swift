@@ -49,9 +49,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // debugging
-        print(realm.objects(Weather.self).count)
-        
         // notification center
         
             // 1. application did become active

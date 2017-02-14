@@ -26,6 +26,9 @@ class MenuTableViewController: UITableViewController {
         
         self.menuImageViews[self.selectedPage].image = UIImage(named: "Double Circle")
         
+        if ThreeD {
+            self.tableView(self.tableView, didSelectRowAt: IndexPath(row: 4, section: 0))
+        }
         
     }
     

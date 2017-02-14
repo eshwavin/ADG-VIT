@@ -13,6 +13,7 @@ import RealmSwift
 var reachability: Reachability?
 var reachabilityStatus = ""
 let realm = try! Realm()
+var ThreeD = false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -100,9 +101,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if shortcutItem.type == "com.vinnu.ADG-VIT.goToTwoCredits" {
             
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "TwoCreditNav")
+//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "TwoCreditNav")
+
+            ThreeD = true
             
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            
+            let sw = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+            
+            self.window?.rootViewController = sw
+            
+            let destinationController = storyboard.instantiateViewController(withIdentifier: "TwoCreditMain") as! TwoCreditCourseViewController
+            
+            let navigationController = UINavigationController(rootViewController: destinationController)
+            
+            sw.pushFrontViewController(navigationController, animated: true)
+            
+            
+
             
         }
         
