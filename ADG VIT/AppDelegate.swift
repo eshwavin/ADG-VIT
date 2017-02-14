@@ -87,6 +87,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
             
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.reachabilityChanged, object: nil)
+        
+        // remove realm weather objects
+        try! realm.write {
+            realm.delete(realm.objects(Weather.self))
+        }
     }
     
     // MARK: - Quick Actions

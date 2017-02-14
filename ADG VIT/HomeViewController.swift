@@ -49,6 +49,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // debugging
+        print(realm.objects(Weather.self).count)
+        
         // notification center
         
             // 1. application did become active
@@ -77,10 +80,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.title = "Home"
-        
-        // getting news
-        
-        self.getData()
         
         // location manager
         self.locationManager.delegate = self
@@ -331,6 +330,30 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         self.weatherIconImageView.image = UIImage(named: "\(result["icon"]!)")
         
+        
+        if let realmWeatherObject = realm.objects(Weather.self).first {
+            
+            try! realm.write {
+                realmWeatherObject.weatherIconName = "\(result["icon"]!)"
+                realmWeatherObject.weatherLabelText = self.weatherLabel.text!
+            }
+            
+        }
+        else {
+            let realmWeatherObject = Weather()
+            realmWeatherObject.key = "Key"
+            realmWeatherObject.weatherIconName = "\(result["icon"]!)"
+            realmWeatherObject.weatherLabelText = self.weatherLabel.text!
+            
+            try! realm.write {
+                realm.add(realmWeatherObject)
+            }
+        }
+        
+        
+        
+        
+        
 //        let iconUrl = "http://openweathermap.org/img/w/\(result["icon"]!).png"
 //        
 //        let dataManager = DataManager()
@@ -346,10 +369,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func manageLocation() {
         
-        
         // 1. ask for authorization
         if CLLocationManager.authorizationStatus() == .notDetermined {
             self.locationManager.requestWhenInUseAuthorization()
+            
+            if let realmWeatherObject = realm.objects(Weather.self).first {
+                self.weatherIconImageView.image = UIImage(named: realmWeatherObject.weatherIconName)
+                self.weatherLabel.text = realmWeatherObject.weatherLabelText
+            }
+            
             self.updateLocation()
             
         }
@@ -361,6 +389,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
             // 3. we do have authorization
         else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            
+            if let realmWeatherObject = realm.objects(Weather.self).first {
+                self.weatherIconImageView.image = UIImage(named: realmWeatherObject.weatherIconName)
+                self.weatherLabel.text = realmWeatherObject.weatherLabelText
+            }
             
             self.updateLocation()
             

@@ -15,6 +15,7 @@
 		11506BBA1E450AA500134974 /* TwoCreditCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */; };
 		11506BBC1E45E84A00134974 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11506BBB1E45E84A00134974 /* TeamViewController.swift */; };
 		11506BC01E4A359600134974 /* OtherIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11506BBF1E4A359500134974 /* OtherIcons.xcassets */; };
+		1155B9931E539DED00F82691 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155B9921E539DED00F82691 /* Weather.swift */; };
 		116C1CA21E37E9EC00456C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA11E37E9EC00456C00 /* AppDelegate.swift */; };
 		116C1CA41E37E9EC00456C00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C1CA31E37E9EC00456C00 /* HomeViewController.swift */; };
 		116C1CA71E37E9EC00456C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116C1CA51E37E9EC00456C00 /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 		11506BB91E450AA500134974 /* TwoCreditCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoCreditCourseViewController.swift; sourceTree = "<group>"; };
 		11506BBB1E45E84A00134974 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		11506BBF1E4A359500134974 /* OtherIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OtherIcons.xcassets; sourceTree = "<group>"; };
+		1155B9921E539DED00F82691 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		116C1C9E1E37E9EC00456C00 /* ADG VIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADG VIT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		116C1CA11E37E9EC00456C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116C1CA31E37E9EC00456C00 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		1155B9941E539DF800F82691 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1155B9921E539DED00F82691 /* Weather.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		116C1C951E37E9EB00456C00 = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +349,7 @@
 				119FD5001E3E46370021AE26 /* Cells */,
 				119FD5011E3E463E0021AE26 /* Controller */,
 				119FD5021E3E46460021AE26 /* Data Source Delegate */,
+				1155B9941E539DF800F82691 /* Model */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -868,6 +879,7 @@
 				11AF6A221E4EAC250081E1DC /* DeveloperViewController.swift in Sources */,
 				11F810BD1E43413D008B83B2 /* EventsViewController.swift in Sources */,
 				118BC4E81E44FD4000C0742B /* UpcomingEventsViewController.swift in Sources */,
+				1155B9931E539DED00F82691 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

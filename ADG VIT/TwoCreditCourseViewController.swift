@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import RealmSwift
 import MessageUI
+import LocalAuthentication
 
 class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
 
