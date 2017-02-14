@@ -9,8 +9,9 @@
 import UIKit
 import Firebase
 import RealmSwift
+import MessageUI
 
-class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate {
+class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var emailTextField: UITextField!
@@ -151,7 +152,14 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate {
         databaseReference.queryOrdered(byChild: "email").queryEqual(toValue: self.emailTextField.text!).observe(FIRDataEventType.value, with: { (snapshot) in
             
             if snapshot.value is NSNull {
-                self.present(showAlert("Sorry!", message: "You are not registered under our two credit course. If you are registered then please contact us via the feedback section"), animated: true, completion: nil)
+                
+                let alertController = showAlert("Sorry!", message: "You are not registered under our two credit course. If you are registered then please send an email")
+                alertController.addAction(UIAlertAction(title: "Send Email ", style: UIAlertActionStyle.default, handler: { (action) in
+                    self.sendEmail()
+                }))
+                
+                
+                self.present(alertController, animated: true, completion: nil)
             }
             else {
                 let userData = (snapshot.value! as! [String: AnyObject]).first!.value
@@ -247,5 +255,23 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate {
         self.phoneNumberTextField.endEditing(true)
     }
     
+    // MARK: - Mail controller
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([issueEmailAddress])
+            mail.setSubject("Login Issue")
+            
+            self.present(mail, animated: true)
+        } else {
+            
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
     
 }

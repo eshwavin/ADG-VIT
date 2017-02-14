@@ -71,8 +71,12 @@ let borderColor = color(red: 2, green: 128, blue: 186, alpha: 1.0)
 let attendedColor = color(red: 120, green: 202, blue: 212, alpha: 1.0)
 let absentColor = color(red: 231, green: 78, blue: 97, alpha: 1.0)
 
+let issueEmailAddress = "eshwavin@hotmail.com"
+
 // MARK: - Team
 
 let teamColor = color(red: 37, green: 207, blue: 155, alpha: 1.0)
+
+
 
 
