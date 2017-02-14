@@ -84,6 +84,10 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TwoCreditCourseViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tapGestureRecognizer)
         
+        // Touch ID - Local authentication
+        
+        self.loginUsingTouchID()
+        
         
     }
     
@@ -149,63 +153,7 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
             return
         }
         
-        
-        databaseReference.queryOrdered(byChild: "email").queryEqual(toValue: self.emailTextField.text!).observe(FIRDataEventType.value, with: { (snapshot) in
-            
-            if snapshot.value is NSNull {
-                
-                let alertController = showAlert("Sorry!", message: "You are not registered under our two credit course. If you are registered then please send an email")
-                alertController.addAction(UIAlertAction(title: "Send Email ", style: UIAlertActionStyle.default, handler: { (action) in
-                    self.sendEmail()
-                }))
-                
-                
-                self.present(alertController, animated: true, completion: nil)
-            }
-            else {
-                let userData = (snapshot.value! as! [String: AnyObject]).first!.value
-                let registerNumber = userData["registerNumber"] as! String
-                let phoneNumber = userData["phoneNumber"] as! String
-                
-                if self.registerNumberTextField.text! == registerNumber && self.phoneNumberTextField.text! == phoneNumber {
-                    
-                    
-                    let user = UserData()
-                    user.name = userData["name"] as! String
-                    user.email = userData["email"] as! String
-                    let events = userData["events"] as! [String : AnyObject]
-                    
-                    for event in events {
-                        
-                        let value = event.value as! [String: AnyObject]
-                        
-                        let realmEvent = Events()
-                        realmEvent.name = value["name"] as! String
-                        realmEvent.attended = value["attended"] as! String == "YES" ? true : false
-                        realmEvent.date = value["date"] as! String
-                        realmEvent.hours = Float((value["hours"] as! NSString).floatValue)
-
-                        user.events.append(realmEvent)
-                        
-                    }
-                    
-                    try! realm.write {
-                        realm.add(user)
-                    }
-                    
-                    UserDefaults.standard.set(true, forKey: "LoggedIn")
-                    
-                    self.performSegue(withIdentifier: "goToMainPage", sender: self)
-                }
-                else {
-                    self.present(showAlert("Invalid Credentials", message: "The register number and/or the phone number is wrong"), animated: true, completion: nil)
-                }
-                
-            }
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        self.getFirebaseUserData()
         
     }
     
@@ -273,6 +221,153 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+    
+    // MARK: - Touch ID 
+    
+    func loginUsingTouchID() {
+        if UserDefaults.standard.bool(forKey: "TouchID") == true {
+            
+            let authenticationContext = LAContext()
+            
+            var error: NSError?
+            
+            guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+                return
+            }
+            
+            let email = UserDefaults.standard.object(forKey: "Email") as! String
+            
+            authenticationContext.evaluatePolicy(
+                .deviceOwnerAuthenticationWithBiometrics,
+                localizedReason: "Login to \(email)",
+                reply: { [unowned self] (success, error) -> Void in
+                    
+                    if( success ) {
+                        
+                        // Fingerprint recognized
+                        // Go to view controller
+                        self.emailTextField.text = email
+                        self.getFirebaseUserData()
+                        
+                    } else {
+                        
+                        // Check if there is an error
+                        if let error = error {
+                            
+                            let message = self.errorMessageForLAErrorCode((error as NSError).code)
+                            print(message)
+                            
+                        }
+                        
+                    }
+                    
+            })
+        }
+    }
+    
+    func errorMessageForLAErrorCode(_ errorCode: Int) -> String {
+        
+        var message = ""
+        
+        switch errorCode {
+            
+        case LAError.appCancel.rawValue:
+            message = "Authentication was cancelled by application"
+            
+        case LAError.authenticationFailed.rawValue:
+            message = "The user failed to provide valid credentials"
+            
+        case LAError.invalidContext.rawValue:
+            message = "The context is invalid"
+            
+        case LAError.passcodeNotSet.rawValue:
+            message = "Passcode is not set on the device"
+            
+        case LAError.systemCancel.rawValue:
+            message = "Authentication was cancelled by the system"
+            
+        case LAError.touchIDLockout.rawValue:
+            message = "Too many failed attempts."
+            
+        case LAError.touchIDNotAvailable.rawValue:
+            message = "TouchID is not available on the device"
+            
+        case LAError.userCancel.rawValue:
+            message = "The user did cancel"
+            
+        case LAError.userFallback.rawValue:
+            message = "The user chose to use the fallback"
+            
+        default:
+            message = "Did not find error code on LAError object"
+            
+        }
+        
+        return message
+        
+    }
+    
+    // MARK: - Firebase User Data
+    
+    func getFirebaseUserData() {
+        databaseReference.queryOrdered(byChild: "email").queryEqual(toValue: self.emailTextField.text!).observe(FIRDataEventType.value, with: { (snapshot) in
+            
+            if snapshot.value is NSNull {
+                
+                let alertController = showAlert("Sorry!", message: "You are not registered under our two credit course. If you are registered then please send an email")
+                alertController.addAction(UIAlertAction(title: "Send Email ", style: UIAlertActionStyle.default, handler: { (action) in
+                    self.sendEmail()
+                }))
+                
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else {
+                let userData = (snapshot.value! as! [String: AnyObject]).first!.value
+                let registerNumber = userData["registerNumber"] as! String
+                let phoneNumber = userData["phoneNumber"] as! String
+                
+                if self.registerNumberTextField.text! == registerNumber && self.phoneNumberTextField.text! == phoneNumber {
+                    
+                    
+                    let user = UserData()
+                    user.name = userData["name"] as! String
+                    user.email = userData["email"] as! String
+                    let events = userData["events"] as! [String : AnyObject]
+                    
+                    for event in events {
+                        
+                        let value = event.value as! [String: AnyObject]
+                        
+                        let realmEvent = Events()
+                        realmEvent.name = value["name"] as! String
+                        realmEvent.attended = value["attended"] as! String == "YES" ? true : false
+                        realmEvent.date = value["date"] as! String
+                        realmEvent.hours = Float((value["hours"] as! NSString).floatValue)
+                        
+                        user.events.append(realmEvent)
+                        
+                    }
+                    
+                    try! realm.write {
+                        realm.add(user)
+                    }
+                    
+                    UserDefaults.standard.set(true, forKey: "LoggedIn")
+                    
+                    self.performSegue(withIdentifier: "goToMainPage", sender: self)
+                }
+                else {
+                    self.present(showAlert("Invalid Credentials", message: "The register number and/or the phone number is wrong"), animated: true, completion: nil)
+                }
+                
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+
     }
     
 }
