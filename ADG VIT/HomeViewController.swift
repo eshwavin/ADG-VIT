@@ -40,7 +40,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var VITTableView: UITableView!
     var ADGTableView: UITableView!
     
-    
     // MARK: Core Location
     
     let locationManager = CLLocationManager()

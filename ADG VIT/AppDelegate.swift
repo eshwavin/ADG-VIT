@@ -88,6 +88,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.reachabilityChanged, object: nil)
     }
+    
+    // MARK: - Quick Actions
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        if shortcutItem.type == "com.vinnu.ADG-VIT.goToTwoCredits" {
+            
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "TwoCreditNav")
+            
+            
+        }
+        
+    }
 
 
 }

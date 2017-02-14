@@ -10,7 +10,10 @@ import UIKit
 
 class TeamViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
     
-    let names = ["Rishav Shaw", "Pranjal Singh", "Srivinayak Chaitanya Eshwa", "Akhil Ranjan", "Naman Mehta", "Sayantan Pal", "Ruchir Arora", "Shubhendu Dubey", "Zeean", "Mantej", "Avantika", "Mirunalini", "Suravi"]
+    let names = ["Rishav Shaw", "Pranjal Singh", "Srivinayak Chaitanya Eshwa", "Akhil Ranjan", "Naman Mehta", "Sayantan Pal", "Ruchir Arora", "Shubhendu Dubey", "Pulkit Mittal", "Mantej Gill", "Zeean", "Divyansh Rajput", "Joshua Anith Singh", "Suravi Mishra", "Avantika Bhatia", "Mirunalini Mahamika"]
+    
+    let designations = ["Director", "President", "Vice President (Technical)", "Vice President (Finance)", "Vice President ()", "General Secretary", "Joint Secretary", "Management Head", "Events Head", "Technical Head", "Projects Head", "Design Head", "Sponsorship Head", "", "", ""]
+    
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var carouselView: iCarousel!
@@ -56,38 +59,41 @@ class TeamViewController: UIViewController, iCarouselDataSource, iCarouselDelega
         
         // image
         
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.carouselView.frame.width, height: self.carouselView.frame.height * 0.82))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.carouselView.frame.width, height: self.carouselView.frame.height * 0.84))
 
+        imageView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
+        imageView.image = UIImage(named: self.names[index].components(separatedBy: " ").first!.lowercased())
         
         view.addSubview(imageView)
         
         // name
         
-        let nameLabel = UILabel(frame: CGRect(x: 0, y: self.carouselView.frame.height * 0.82, width: self.carouselView.frame.width, height: self.carouselView.frame.height * 0.1))
+        let nameLabel = UILabel(frame: CGRect(x: 0, y: self.carouselView.frame.height * 0.84, width: self.carouselView.frame.width, height: self.carouselView.frame.height * 0.1))
         
         nameLabel.textAlignment = .center
+        nameLabel.minimumScaleFactor = 0.8
         
         nameLabel.text = self.names[index]
         
         nameLabel.textColor = UIColor.white
         
-        nameLabel.font = UIFont(name: "Avenir", size: 20.0)
+        nameLabel.font = UIFont(name: "Avenir", size: 19.0)
         
         view.addSubview(nameLabel)
         
         // designation
         
-        let designationLabel = UILabel(frame: CGRect(x: 0, y: self.carouselView.frame.height * 0.92, width: self.carouselView.frame.width, height: self.carouselView.frame.height * 0.08))
+        let designationLabel = UILabel(frame: CGRect(x: 0, y: self.carouselView.frame.height * 0.94, width: self.carouselView.frame.width, height: self.carouselView.frame.height * 0.06))
         
         designationLabel.textAlignment = .center
         
-        designationLabel.text = self.names[index]
+        designationLabel.text = self.designations[index]
         
         designationLabel.textColor = teamColor
         
-        designationLabel.font = UIFont(name: "Avenir", size: 16.0)
+        designationLabel.font = UIFont(name: "Avenir", size: 15.0)
         
         view.addSubview(designationLabel)
         

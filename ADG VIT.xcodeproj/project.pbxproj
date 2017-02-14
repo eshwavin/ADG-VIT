@@ -42,7 +42,6 @@
 		11AF6A201E4E99340081E1DC /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF6A1F1E4E99340081E1DC /* EventsTableViewCell.swift */; };
 		11AF6A221E4EAC250081E1DC /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF6A211E4EAC250081E1DC /* DeveloperViewController.swift */; };
 		11AF6A241E4EAFA40081E1DC /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AF6A231E4EAFA40081E1DC /* People.xcassets */; };
-		11AF6A261E4EB09E0081E1DC /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF6A251E4EB09E0081E1DC /* FeedbackViewController.swift */; };
 		11E995E61E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E995E51E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift */; };
 		11E995EA1E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E995E91E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift */; };
 		11EB27781E4E5D250070B512 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EB27771E4E5D250070B512 /* UserData.swift */; };
@@ -121,7 +120,6 @@
 		11AF6A1F1E4E99340081E1DC /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		11AF6A211E4EAC250081E1DC /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
 		11AF6A231E4EAFA40081E1DC /* People.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = People.xcassets; sourceTree = "<group>"; };
-		11AF6A251E4EB09E0081E1DC /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		11E995E51E41C3C300214293 /* ProjectsOuterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsOuterCollectionViewCell.swift; sourceTree = "<group>"; };
 		11E995E91E41C57D00214293 /* ProjectsCollectionViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		11EB27771E4E5D250070B512 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 			children = (
 				116C1CA11E37E9EC00456C00 /* AppDelegate.swift */,
 				116C1CD41E37F63800456C00 /* MenuTableViewController.swift */,
-				11AF6A281E4F14C10081E1DC /* Feedback */,
 				11AF6A271E4F14BA0081E1DC /* Developer */,
 				119B34FE1E4E3CFB006F3853 /* Our Team */,
 				119B34FC1E4E3CE1006F3853 /* Two Credit Course */,
@@ -386,14 +383,6 @@
 				11AF6A211E4EAC250081E1DC /* DeveloperViewController.swift */,
 			);
 			name = Developer;
-			sourceTree = "<group>";
-		};
-		11AF6A281E4F14C10081E1DC /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				11AF6A251E4EB09E0081E1DC /* FeedbackViewController.swift */,
-			);
-			name = Feedback;
 			sourceTree = "<group>";
 		};
 		11EB27761E4E5C470070B512 /* View */ = {
@@ -848,7 +837,6 @@
 				11F810BF1E4345B9008B83B2 /* EventsCollectionViewDataSourceDelegate.swift in Sources */,
 				11506BBA1E450AA500134974 /* TwoCreditCourseViewController.swift in Sources */,
 				11F810C11E4349CA008B83B2 /* EventsOuterCollectionViewCell.swift in Sources */,
-				11AF6A261E4EB09E0081E1DC /* FeedbackViewController.swift in Sources */,
 				116C1CD51E37F63800456C00 /* MenuTableViewController.swift in Sources */,
 				119FD4F81E3E43090021AE26 /* DataManager.swift in Sources */,
 				11120BC21E3FACC400F990F8 /* ProjectsViewController.swift in Sources */,
@@ -1037,6 +1025,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = S2LV3T7DFP;
 				INFOPLIST_FILE = "ADG VIT/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinnu.ADG-VIT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1054,6 +1043,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = S2LV3T7DFP;
 				INFOPLIST_FILE = "ADG VIT/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinnu.ADG-VIT";
 				PRODUCT_NAME = "$(TARGET_NAME)";

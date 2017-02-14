@@ -20,18 +20,19 @@ class AttendanceView: UIView {
     }
     
     let shapeLayer = CAShapeLayer()
+    let backLayer = CAShapeLayer()
     var path = UIBezierPath()
     
     override func didMoveToSuperview() {
         
-        let backLayer = CAShapeLayer()
-        backLayer.path = UIBezierPath(ovalIn: self.bounds).cgPath
+        
+//        backLayer.path = UIBezierPath(ovalIn: self.bounds).cgPath
+        
         backLayer.fillColor = UIColor.clear.cgColor
         backLayer.strokeColor = UIColor.white.cgColor
         backLayer.lineWidth = 4.0
         self.layer.addSublayer(backLayer)
         
-//        self.shapeLayer.path = path.cgPath
         self.shapeLayer.lineWidth = 4.0
         self.shapeLayer.fillColor = UIColor.clear.cgColor
         self.shapeLayer.strokeColor = borderColor.cgColor
@@ -44,7 +45,14 @@ class AttendanceView: UIView {
     
     func prepareForEditing() {
         
-        self.path = UIBezierPath(arcCenter: CGPoint(x: self.frame.width / 2.0, y: self.frame.height / 2.0), radius: self.frame.width / 2.0, startAngle: 0, endAngle: CGFloat(M_PI) * 2.0 * self.percentage, clockwise: true)
+        
+        
+        self.path = UIBezierPath(arcCenter: CGPoint(x: self.frame.width / 2.0, y: self.frame.height / 2.0), radius: (self.frame.width / 2.0), startAngle: 0, endAngle: CGFloat(M_PI) * 2.0 * self.percentage, clockwise: true)
+        
+        let path2 = UIBezierPath(arcCenter: CGPoint(x: self.frame.width / 2.0, y: self.frame.height / 2.0), radius: (self.frame.width / 2.0), startAngle: 0, endAngle: CGFloat(M_PI) * 2.0 * self.percentage, clockwise: true)
+        path2.addArc(withCenter: CGPoint(x: self.frame.width / 2.0, y: self.frame.height / 2.0), radius: (self.frame.width / 2.0), startAngle: CGFloat(M_PI) * 2.0 * self.percentage, endAngle: CGFloat(M_PI) * 2.0, clockwise: true)
+        
+        self.backLayer.path = path2.cgPath
         
         self.shapeLayer.path = self.path.cgPath
         
