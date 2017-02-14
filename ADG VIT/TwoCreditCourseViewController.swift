@@ -84,11 +84,21 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TwoCreditCourseViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tapGestureRecognizer)
         
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         // Touch ID - Local authentication
         
-        self.loginUsingTouchID()
+        if UserDefaults.standard.bool(forKey: "LoggedIn") != true {
+            self.loginUsingTouchID()
+        }
         
         
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -153,7 +163,7 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
             return
         }
         
-        self.getFirebaseUserData()
+        self.getFirebaseUserData(false)
         
     }
     
@@ -248,15 +258,17 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
                         // Fingerprint recognized
                         // Go to view controller
                         self.emailTextField.text = email
-                        self.getFirebaseUserData()
+                        self.getFirebaseUserData(true)
                         
                     } else {
                         
                         // Check if there is an error
                         if let error = error {
                             
-                            let message = self.errorMessageForLAErrorCode((error as NSError).code)
-                            print(message)
+                            let message = errorMessageForLAErrorCode((error as NSError).code)
+                            if message != "None" {
+                                self.present(showAlert("Error", message: message), animated: true, completion: nil)
+                            }
                             
                         }
                         
@@ -266,51 +278,10 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
         }
     }
     
-    func errorMessageForLAErrorCode(_ errorCode: Int) -> String {
         
-        var message = ""
-        
-        switch errorCode {
-            
-        case LAError.appCancel.rawValue:
-            message = "Authentication was cancelled by application"
-            
-        case LAError.authenticationFailed.rawValue:
-            message = "The user failed to provide valid credentials"
-            
-        case LAError.invalidContext.rawValue:
-            message = "The context is invalid"
-            
-        case LAError.passcodeNotSet.rawValue:
-            message = "Passcode is not set on the device"
-            
-        case LAError.systemCancel.rawValue:
-            message = "Authentication was cancelled by the system"
-            
-        case LAError.touchIDLockout.rawValue:
-            message = "Too many failed attempts."
-            
-        case LAError.touchIDNotAvailable.rawValue:
-            message = "TouchID is not available on the device"
-            
-        case LAError.userCancel.rawValue:
-            message = "The user did cancel"
-            
-        case LAError.userFallback.rawValue:
-            message = "The user chose to use the fallback"
-            
-        default:
-            message = "Did not find error code on LAError object"
-            
-        }
-        
-        return message
-        
-    }
-    
     // MARK: - Firebase User Data
     
-    func getFirebaseUserData() {
+    func getFirebaseUserData(_ touchID: Bool) {
         databaseReference.queryOrdered(byChild: "email").queryEqual(toValue: self.emailTextField.text!).observe(FIRDataEventType.value, with: { (snapshot) in
             
             if snapshot.value is NSNull {
@@ -328,7 +299,7 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
                 let registerNumber = userData["registerNumber"] as! String
                 let phoneNumber = userData["phoneNumber"] as! String
                 
-                if self.registerNumberTextField.text! == registerNumber && self.phoneNumberTextField.text! == phoneNumber {
+                if (self.registerNumberTextField.text! == registerNumber && self.phoneNumberTextField.text! == phoneNumber) || touchID {
                     
                     
                     let user = UserData()

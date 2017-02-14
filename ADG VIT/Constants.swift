@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import LocalAuthentication
 
 // MARK: - Color funnction to make it easy
 
@@ -72,6 +73,49 @@ let attendedColor = color(red: 120, green: 202, blue: 212, alpha: 1.0)
 let absentColor = color(red: 231, green: 78, blue: 97, alpha: 1.0)
 
 let issueEmailAddress = "eshwavin@hotmail.com"
+
+func errorMessageForLAErrorCode(_ errorCode: Int) -> String {
+    
+    var message = ""
+    
+    switch errorCode {
+        
+    case LAError.appCancel.rawValue:
+        message = "Authentication was cancelled by application"
+        
+    case LAError.authenticationFailed.rawValue:
+        message = "The user failed to provide valid credentials"
+        
+    case LAError.invalidContext.rawValue:
+        message = "The context is invalid"
+        
+    case LAError.passcodeNotSet.rawValue:
+        message = "Passcode is not set on the device"
+        
+    case LAError.systemCancel.rawValue:
+        message = "Authentication was cancelled by the system"
+        
+    case LAError.touchIDLockout.rawValue:
+        message = "Too many failed attempts."
+        
+    case LAError.touchIDNotAvailable.rawValue:
+        message = "TouchID is not available on the device"
+        
+    case LAError.userCancel.rawValue:
+        message = "None"
+        
+    case LAError.userFallback.rawValue:
+        message = "The user chose to use the fallback"
+        
+    default:
+        message = "Some unexpected error occured"
+        
+    }
+    
+    return message
+    
+}
+
 
 // MARK: - Team
 

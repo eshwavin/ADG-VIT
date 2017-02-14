@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import RealmSwift
+import LocalAuthentication
 
 class TwoCreditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -21,6 +22,8 @@ class TwoCreditViewController: UIViewController, UITableViewDataSource, UITableV
     var events = [Events]()
     var totalHours: Float = 0.0
     var attendedHours: Float = 0.0
+    
+    var email = ""
     
     let databaseReference = FIRDatabase.database().reference().child("twoCredit").child("users")
     
@@ -75,6 +78,8 @@ class TwoCreditViewController: UIViewController, UITableViewDataSource, UITableV
             self.attendanceLabel.text = "\(self.attendedHours)/\(self.totalHours)"
             
             user = us
+            
+            self.email = user.email
             
             self.tableView.reloadData()
 
@@ -159,6 +164,21 @@ class TwoCreditViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         
+        // asking for touch id setup
+        
+        if UserDefaults.standard.bool(forKey: "TouchID") != true && (((UserDefaults.standard.object(forKey: "Email") as? String) == nil || (UserDefaults.standard.object(forKey: "Email") as! String) != user.email)) {
+            
+            let alertController = UIAlertController(title: "Set up touch id", message: "Do you want to user touch id for \"\(user.email)\"?", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+                self.setupTouchID()
+            }))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            
+        }
+        
         
     }
     
@@ -224,6 +244,49 @@ class TwoCreditViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
 
+    // MARK: - Touch ID
+    
+    func setupTouchID() {
+        let authenticationContext = LAContext()
+        
+        var error: NSError?
+        
+        guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            return
+        }
+        
+        
+        
+        authenticationContext.evaluatePolicy(
+            .deviceOwnerAuthenticationWithBiometrics,
+            localizedReason: "Login to \(email)",
+            reply: { [unowned self] (success, error) -> Void in
+                
+                if( success ) {
+                    
+                    UserDefaults.standard.set(true, forKey: "TouchID")
+                    UserDefaults.standard.set(self.email, forKey: "Email")
+                    
+                    self.present(showAlert("Touch ID Set Up Successfully", message: nil), animated: true, completion: nil)
+                    
+                    
+                } else {
+                    
+                    // Check if there is an error
+                    if let error = error {
+                        
+                        let message = errorMessageForLAErrorCode((error as NSError).code)
+                        if message != "None" {
+                            self.present(showAlert("Error", message: message), animated: true, completion: nil)
+                        }
+                        
+                    }
+                    
+                }
+                
+        })
+
+    }
     
     
     /*
