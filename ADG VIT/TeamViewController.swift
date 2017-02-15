@@ -12,12 +12,10 @@ class TeamViewController: UIViewController, iCarouselDataSource, iCarouselDelega
     
     let names = ["Rishav Shaw", "Pranjal Singh", "Srivinayak Chaitanya Eshwa", "Akhil Ranjan", "Naman Mehta", "Sayantan Pal", "Ruchir Arora", "Shubhendu Dubey", "Pulkit Mittal", "Mantej Gill", "Zeean", "Divyansh Rajput", "Joshua Anith Singh", "Suravi Mishra", "Avantika Bhatia", "Mirunalini Mahamika"]
     
-    let designations = ["Director", "President", "Vice President (Technical)", "Vice President (Finance)", "Vice President ()", "General Secretary", "Joint Secretary", "Management Head", "Events Head", "Technical Head", "Projects Head", "Design Head", "Sponsorship Head", "", "", ""]
-    
+    let designations = ["Director", "President", "Vice President (Technical)", "Vice President (Finance)", "Vice President (Operations)", "General Secretary", "Joint Secretary", "Management Head", "Events Head", "Technical Head", "Projects Head", "Design Head", "Sponsorship Head", "P&M Head", "Public Realtions Officer", "Human Resources"]
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var carouselView: iCarousel!
-
     
     // MARK: - View Cycle
     

@@ -221,7 +221,7 @@ class DataManager {
             else {
                 DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
                     DispatchQueue.main.async {
-                        completion(UIImage(named: "General")!)
+                        completion(UIImage(named: "general2")!)
                     }
                 }
             }
