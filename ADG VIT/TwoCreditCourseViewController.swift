@@ -115,7 +115,9 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
     
     func reachabilityChanged() {
         if reachabilityStatus == NOACCESS {
-            self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            }
         }
     }
     
@@ -236,6 +238,9 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
     // MARK: - Touch ID 
     
     func loginUsingTouchID() {
+        
+        
+        
         if UserDefaults.standard.bool(forKey: "TouchID") == true {
             
             let authenticationContext = LAContext()
@@ -302,28 +307,59 @@ class TwoCreditCourseViewController: UIViewController, UITextFieldDelegate, MFMa
                 if (self.registerNumberTextField.text! == registerNumber && self.phoneNumberTextField.text! == phoneNumber) || touchID {
                     
                     
-                    let user = UserData()
-                    user.name = userData["name"] as! String
-                    user.email = userData["email"] as! String
-                    let events = userData["events"] as! [String : AnyObject]
+                    var user: UserData!
                     
-                    for event in events {
+                    if let us = realm.objects(UserData.self).first {
+                        user = us
                         
-                        let value = event.value as! [String: AnyObject]
+                        let events = userData["events"] as! [String : AnyObject]
                         
-                        let realmEvent = Events()
-                        realmEvent.name = value["name"] as! String
-                        realmEvent.attended = value["attended"] as! String == "YES" ? true : false
-                        realmEvent.date = value["date"] as! String
-                        realmEvent.hours = Float((value["hours"] as! NSString).floatValue)
-                        
-                        user.events.append(realmEvent)
+                        try! realm.write {
+                            
+                            realm.delete(realm.objects(Events.self))
+                            
+                            for event in events {
+                                
+                                let value = event.value as! [String: AnyObject]
+                                
+                                let realmEvent = Events()
+                                realmEvent.name = value["name"] as! String
+                                realmEvent.attended = value["attended"] as! String == "YES" ? true : false
+                                realmEvent.date = value["date"] as! String
+                                realmEvent.hours = Float((value["hours"] as! NSString).floatValue)
+                                
+                                user.events.append(realmEvent)
+                                
+                            }
+                            
+                        }
                         
                     }
-                    
-                    try! realm.write {
-                        realm.add(user)
+                    else {
+                        user = UserData()
+                        user.name = userData["name"] as! String
+                        user.email = userData["email"] as! String
+                        let events = userData["events"] as! [String : AnyObject]
+                        
+                        for event in events {
+                            
+                            let value = event.value as! [String: AnyObject]
+                            
+                            let realmEvent = Events()
+                            realmEvent.name = value["name"] as! String
+                            realmEvent.attended = value["attended"] as! String == "YES" ? true : false
+                            realmEvent.date = value["date"] as! String
+                            realmEvent.hours = Float((value["hours"] as! NSString).floatValue)
+                            
+                            user.events.append(realmEvent)
+                            
+                        }
+                        
+                        try! realm.write {
+                            realm.add(user)
+                        }
                     }
+                    
                     
                     UserDefaults.standard.set(true, forKey: "LoggedIn")
                     

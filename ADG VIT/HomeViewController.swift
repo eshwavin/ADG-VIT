@@ -416,7 +416,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func reachabilityChanged() {
         if reachabilityStatus == NOACCESS {
-            self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            
+            DispatchQueue.main.async {
+                self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            }
+            
+            
         }
         else {
             self.manageLocation()

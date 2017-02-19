@@ -193,7 +193,9 @@ class ProjectsViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func reachabilityChanged() {
         if reachabilityStatus == NOACCESS {
-            self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            }
         }
         self.getData()
     }

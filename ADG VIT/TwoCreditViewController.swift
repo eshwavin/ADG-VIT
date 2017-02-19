@@ -213,7 +213,9 @@ class TwoCreditViewController: UIViewController, UITableViewDataSource, UITableV
     
     func reachabilityChanged() {
         if reachabilityStatus == NOACCESS {
-            self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            }
         }
     }
     

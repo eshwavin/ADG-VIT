@@ -223,7 +223,9 @@ class EventDetailsViewController: UIViewController, UICollectionViewDataSource, 
     
     func reachabilityChanged() {
         if reachabilityStatus == NOACCESS {
-            self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            }
         }
         else if self.eventImages.count == 0 {
             self.getImages()

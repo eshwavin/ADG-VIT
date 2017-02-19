@@ -99,17 +99,7 @@ class ProjectDetailsViewController: UIViewController {
         
     }
     
-    func reachabilityChanged() {
-        if reachabilityStatus == NOACCESS {
-            self.present(noInternetAccessAlert(), animated: true, completion: nil)
-        }
-        else if self.projectImageView.image == nil {
-            DataManager().getProjectsImage(url: "\(project!["imagePath"]!).png") { (image) in
-                self.projectImageView.image = image
-            }
-        }
-        
-    }
+    
 
     @IBAction func goToProjectLink(_ sender: UIButton) {
         
@@ -141,6 +131,25 @@ class ProjectDetailsViewController: UIViewController {
         }
         
     }
+    
+    
+    
+    // MARK: - Reachability
+    
+    func reachabilityChanged() {
+        if reachabilityStatus == NOACCESS {
+            DispatchQueue.main.async {
+                self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            }
+        }
+        else if self.projectImageView.image == nil {
+            DataManager().getProjectsImage(url: "\(project!["imagePath"]!).png") { (image) in
+                self.projectImageView.image = image
+            }
+        }
+        
+    }
+ 
     /*
     // MARK: - Navigation
 

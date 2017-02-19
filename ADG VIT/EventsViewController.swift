@@ -194,7 +194,9 @@ class EventsViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func reachabilityChanged() {
         if reachabilityStatus == NOACCESS {
-            self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(noInternetAccessAlert(), animated: true, completion: nil)
+            }
         }
         // else load data
         self.getData()
