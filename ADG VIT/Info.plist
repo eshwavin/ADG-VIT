@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeContact</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Access your profile</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Two Credit Course</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.vinnu.ADG-VIT.goToTwoCredits</string>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -51,6 +38,19 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Enable location service to view the weather of your location</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeContact</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Access your profile</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Two Credit Course</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.vinnu.ADG-VIT.goToTwoCredits</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -59,6 +59,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<false/>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>

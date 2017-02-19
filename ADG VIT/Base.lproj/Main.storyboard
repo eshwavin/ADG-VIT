@@ -673,7 +673,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zr1-PN-wRb">
-                                <rect key="frame" x="111.5" y="611" width="40" height="40"/>
+                                <rect key="frame" x="111" y="611" width="40.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zr1-PN-wRb" secondAttribute="height" id="1CS-pH-WCt"/>
                                 </constraints>
@@ -697,7 +697,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnD-z4-mmQ">
-                                <rect key="frame" x="223.5" y="611" width="40" height="40"/>
+                                <rect key="frame" x="223.5" y="611" width="40.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HnD-z4-mmQ" secondAttribute="height" multiplier="1:1" id="Mat-nX-DeU"/>
                                 </constraints>
@@ -1537,7 +1537,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqf-t7-DCd">
-                                <rect key="frame" x="16" y="114" width="39.5" height="39.5"/>
+                                <rect key="frame" x="16" y="114" width="39.5" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.60248007550000005" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Bqf-t7-DCd" secondAttribute="height" multiplier="1:1" id="YEs-NX-UvZ"/>
@@ -1552,7 +1552,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sH6-z2-HId">
-                                <rect key="frame" x="319.5" y="114" width="39.5" height="39.5"/>
+                                <rect key="frame" x="319.5" y="114" width="39.5" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.60248007550000005" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sH6-z2-HId" secondAttribute="height" id="xmT-j9-6sV"/>
@@ -1887,13 +1887,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Credit Attendance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGU-4d-Aju">
-                                <rect key="frame" x="36" y="80" width="203" height="30.5"/>
+                                <rect key="frame" x="36" y="80" width="203" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUf-CB-GcM">
-                                <rect key="frame" x="36" y="110.5" width="65" height="3"/>
+                                <rect key="frame" x="36" y="110" width="65" height="3"/>
                                 <color key="backgroundColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="lK6-So-QNp"/>
@@ -1901,16 +1901,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okl-CV-RhZ" customClass="AttendanceView" customModule="ADG_VIT" customModuleProvider="target">
-                                <rect key="frame" x="114.5" y="138" width="146" height="146"/>
+                                <rect key="frame" x="115" y="138" width="146" height="146"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="56/60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bht-fr-ggh">
-                                        <rect key="frame" x="41.5" y="47" width="63" height="33"/>
+                                        <rect key="frame" x="41" y="47" width="63" height="33"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1m-je-2fV">
-                                        <rect key="frame" x="50" y="80" width="46" height="23.5"/>
+                                        <rect key="frame" x="50" y="80" width="46" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
