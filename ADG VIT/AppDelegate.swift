@@ -8,7 +8,9 @@
 
 import UIKit
 import Firebase
+import FirebaseMessaging
 import RealmSwift
+import UserNotifications
 
 var reachability: Reachability?
 var reachabilityStatus = ""
@@ -16,7 +18,7 @@ let realm = try! Realm()
 var ThreeD = false
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -37,6 +39,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.internetCheck = Reachability.forInternetConnection()
         self.internetCheck?.startNotifier()
         self.statusChangedWithReachability(currentReachabilityStatus: self.internetCheck!)
+        
+        // Push Notifications
+        
+//        let notificationTypes: UIUserNotificationType = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound]
+//        let notificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: nil)
+//        application.registerUserNotificationSettings(notificationSettings)
+        
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            
+            if granted {
+                application.registerForRemoteNotifications()
+            }
+            else {
+                print("Remote Notification Permission Denied")
+            }
+            
+        }
+        
+        
         
         return true
     }
@@ -125,6 +149,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
+    // MARK: - Push Notifications
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(
+            [UNNotificationPresentationOptions.alert,
+             UNNotificationPresentationOptions.sound,
+             UNNotificationPresentationOptions.badge])
+    }
+    
+    
 
 }
 
