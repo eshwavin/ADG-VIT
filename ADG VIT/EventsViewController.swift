@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class EventsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     // MARK: Menu Variables
     

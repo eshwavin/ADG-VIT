@@ -1,0 +1,6 @@
+framework module Pods_ADG_VITUITests {
+  umbrella header "Pods-ADG VITUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

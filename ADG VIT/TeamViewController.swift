@@ -10,9 +10,9 @@ import UIKit
 
 class TeamViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
     
-    let names = ["Rishav Shaw", "Pranjal Singh", "Srivinayak Chaitanya Eshwa", "Akhil Ranjan", "Naman Mehta", "Sayantan Pal", "Ruchir Arora", "Shubhendu Dubey", "Pulkit Mittal", "Mantej Gill", "Zeean Veljee", "Divyansh Rajput", "Joshua Anith Singh", "Suravi Mishra", "Avantika Bhatia", "Mirunalini Mahamika"]
+    let names = ["Rishabh Mittal", "Amrita Visalam", "Mayur Shastri", "Akhil Agarwal", "Dishant Sheth", "Shubhanker Agarwal", "Arunav Saxena", "Rutanshu Jhaveri", "Aditya Jain", "Anushka Anand"]
     
-    let designations = ["Director", "President", "Vice President (Technical)", "Vice President (Finance)", "Vice President (Operations)", "General Secretary", "Joint Secretary", "Management Head", "Events Head", "Technical Head", "Projects Head", "Design Head", "Sponsorship Head", "P&M Head", "Public Realtions Officer", "Human Resources"]
+    let designations = ["Chair", "Vice Chair", "Technical Lead", "Projects Lead (Internal)", "Projects Lead (External)", "Management Head", "Design Head", "Events Head", "Publicity and Marketing", "Human Resources"]
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var carouselView: iCarousel!
